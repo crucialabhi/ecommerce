@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/vendor/vendor.showOrders.css" />
+    <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+    <title>Order Detail Page</title>
+  </head>
+  
+  <body>
+    <%- include("sidebar.ejs") %>
+    <div class="parentDiv">
+      <div class="filter">
+        <p id="filterPara">Filter By Order Status</p>
+        <select
+          name="filterSelect"
+          id="filterSelect"
+          onchange="filterSelect(this)">
+          <option value="">Select order status</option>
+          <option value="vendorVerification">Vendor Verification</option>
+          <option value="Pending">Pending</option>
+          <option value="fulfilled">Fulfilled</option>
+          <option value="rejected">Rejected</option>
+        </select>
+      </div>
+  
+      <div id="orderDetailDiv"></div>
+    </div>
+    <script src="/javascript/vendor/vendor.showOrders.js"></script>
+  </body>
+  
+</html>

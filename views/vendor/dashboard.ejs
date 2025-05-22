@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/vendor/vendor.Dashboard.css" />
+    <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+    <title>Vendor Dashboard</title>
+  </head>
+  
+  <body>
+    <%- include("sidebar.ejs") %>
+    <main>
+      <div class="topDivs">
+        <div class="totalOrder cardDetails">
+          <div class="headingImage">
+            <p>Total Orders</p>
+          <i class="fa-brands fa-first-order-alt" id="orderImg"></i>
+       
+          </div>
+          
+          <div id="countOrder"></div>
+        </div>
+        <div class="totalProduct cardDetails">
+          <div class="headingImage">
+            <p>Total Products</p>
+            <i class="fa-brands fa-product-hunt" id="ProductImg"></i>
+          </div>
+        
+          <div id="countProduct"></div>
+        </div>
+        <div class="totalRevenue cardDetails">
+          <div class="headingImage">
+            <p>Total Revenue</p>
+            <i class="fa-solid fa-indian-rupee-sign" id="revenueImg"></i>
+          </div>
+          
+          <div id="countRevenue"></div>
+        </div>
+        <div class="totalPendingOrders cardDetails">
+          <div class="headingImage">
+            <p>Total Pending Orders</p>
+            <!-- <i class="fa-solid fa-loader" id="pendingOrderImg"></i> -->
+           
+            <i class="fa-solid fa-spinner" id="pendingOrderImg"></i>
+          </div>
+          
+          <div id="PendingOrders"></div>
+        </div>
+      </div>
+      <div class="charts">
+        <div class="divmain">
+          <div class="orderchartDIv">
+            <h2 class="h2Heading">Order Chart</h2>
+            <div id="OrderCanvasDiv">
+              <canvas id="barChart1"></canvas>
+            </div>
+          </div>
+          <div class="ShippingStatus">
+            <h2 class="h2Heading">Shipping Status</h2>
+            <div id="shippingChartDiv">
+              <canvas id="piechart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="divmain2">
+          <div class="InventoryStatus">
+            <h2 class="h2Heading">Inventory Status</h2>
+            <div id="InventoryChartDiv">
+              <canvas id="barChart2"></canvas>
+            </div>
+          </div>
+
+          <div class="table">
+            <h2 class="h2Heading">Trending Products</h2>
+            <div id="trendingTable">
+          </div>
+            
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   
+    <script src="/javascript/vendor/vendor.Dashboard.js"></script>
+  </body>
+</html>

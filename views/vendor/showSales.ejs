@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vendor Sales</title>
+
+  <link rel="stylesheet" href="/css/vendor/vendor.showSales.css">
+  <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+</head>
+
+<body>
+  <%- include("sidebar.ejs") %>
+
+  <main>
+    <div class="Charts">
+      <h2 class="h2Heading">Sales Chart of city</h2>
+      <div id="citySalesChartDiv" class="cardDetails">
+        <canvas id="BarChart"></canvas>
+      </div>
+    </div>
+
+    <div class="ChartsTwo">
+      <div id="MonthChartCanvas" class="cardDetails">
+        <h2 class="h2Heading">Month Wise Sales Chart</h2>
+        <canvas id="lineChart"></canvas>
+      </div>
+      <div class="cardDetails" id="revenueChart">
+        <h2 class="h2Heading">Sales Chart total revenue</h2>
+        <canvas id="revenueLinechart"></canvas>
+      </div>
+    </div>
+  </main>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="/javascript/vendor/vendor.showSales.js"></script>
+
+</html>

@@ -1,0 +1,460 @@
+/* width */
+.main-block::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.main-block::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px hsl(113, 15%, 90%);
+  border-radius: 2px;
+}
+
+/* Handle */
+.main-block::-webkit-scrollbar-thumb {
+  background: hsl(176, 88%, 27%);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.main-block::-webkit-scrollbar-thumb:hover {
+  background: hsl(176, 88%, 27%);
+}
+
+*body {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main-div {
+  display: flex;
+  gap: 3%;
+  padding-block: 4rem;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.aside-div {
+  width: 30%;
+}
+
+.aside-div .aside-component {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  width: 100%;
+  border: 1px solid hsl(113, 15%, 90%);
+  gap: 5px;
+  cursor: pointer;
+}
+
+.aside-div .aside-component:hover {
+  background: #088179;
+  color: white;
+}
+
+.onthecomponent {
+  background: hsl(176, 88%, 27%);
+  color: white;
+}
+
+.main {
+  width: 70%;
+  border: 1px solid hsl(113, 15%, 90%);
+}
+
+.main .div-header {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 35px;
+  background: hsl(0, 0%, 93%);
+}
+
+.main-block {
+  overflow-y: auto;
+  height: 400px;
+}
+
+#addressForm {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10% 0 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.container input {
+  width: 30%;
+  height: 30px;
+  border: 1px solid hsl(113, 15%, 90%);
+  outline: none;
+}
+
+.container input:focus {
+  border: 2px solid hsl(176, 88%, 27%);
+}
+
+.container h3 {
+  margin: 0px;
+}
+
+.container-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-center #button-div1,
+.container-center #button-div2 {
+  width: 95%;
+}
+
+#editAddressBtn {
+  width: 30%;
+}
+
+/* for update profile and update password button */
+.container-center button,
+#addressSubmit,
+#profileSubmit {
+  margin: 0px 5px;
+  width: 15%;
+  height: 35px;
+  font-weight: 500;
+  background-color: hsl(176, 88%, 27%);
+  border-color: hsl(176, 88%, 27%);
+  color: white;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+/* for update profile and update password button */
+.container-center button:hover,
+button:focus,
+#addressSubmit:hover,
+#addressSubmit:focus-visible,
+#profileSubmit:hover,
+#profileSubmit:focus-visible {
+  background-color: transparent;
+  border: 2px solid;
+  border-color: hsl(176, 88%, 27%);
+  color: hsl(176, 88%, 27%);
+  border-radius: 5px;
+  outline: none;
+}
+
+/* for back and delete address button in edit address */
+.container-center #button-div1 button,
+.container-center #button-div2 button .container-center input[type='submit'] {
+  margin: 0px 5px;
+  width: 100%;
+  height: 35px;
+  font-weight: 500;
+  background-color: hsl(176, 88%, 27%);
+  border-color: hsl(176, 88%, 27%);
+  color: white;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+
+.container-center #button-div1 button:hover,
+button:focus,
+.container-center #button-div2 button:hover,
+.container-center #button-div2 button:focus-visible,
+.container-center #button-div1 button:hover,
+.container-center #button-div1 button:focus-visible {
+  background-color: transparent;
+  border: 2px solid;
+  border-color: hsl(176, 88%, 27%);
+  color: hsl(176, 88%, 27%);
+  border-radius: 5px;
+  outline: none;
+}
+
+/* 
+#button-div1 {
+  display: flex;
+  flex-direction: column;
+} */
+
+#button-div2 {
+  display: flex;
+  justify-content: center;
+  align-items: self-end;
+}
+
+.btn {
+  top: 10px;
+  right: 10px;
+  height: 35px;
+  font-weight: 500;
+  background-color: hsl(176, 88%, 27%);
+  border-color: hsl(176, 88%, 27%);
+  color: white;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  margin: 8px;
+  margin: 8px;
+}
+
+.backbtn{
+  width: 35%;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background-color: transparent;
+  border: 2px solid;
+  border-color: hsl(176, 88%, 27%);
+  color: hsl(176, 88%, 27%);
+  border-radius: 5px;
+  outline: none;
+}
+
+.order-details {
+  display: flex;
+  align-items: center;
+  border: 1px solid hsl(113, 15%, 90%);
+  gap: 5%;
+  justify-content: space-between;
+  position: relative;
+}
+
+.order-image img {
+  height: auto;
+  width: 150px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.address-main-div {
+  margin-bottom: 10px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid hsl(113, 15%, 90%);
+}
+
+.address-div {
+  margin-left: 5px;
+}
+
+.address-btn {
+  margin-right: 5px;
+}
+
+.vendor-verification-div {
+  width: 120px;
+  height: auto;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #2196f3;
+  background-color: #e3f2fd;
+  color: #0d47a1;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.pending-div {
+  width: 100px;
+  height: auto;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ff9800;
+  background-color: #fff3cd;
+  color: #856404;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.complete-div {
+  width: 100px;
+  height: auto;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #4caf50;
+  background-color: #e8f5e9;
+  color: #1b5e20;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.refund-complete-div {
+  width: 100px;
+  height: auto;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #f44336;
+  background-color: #ffebee;
+  color: #b71c1c;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.rejected-div {
+  width: 100px;
+  height: auto;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #f44336;
+  background-color: #ffebee;
+  color: #b71c1c;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-div {
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .aside-div {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .aside-component {
+    flex: 1;
+    min-width: 150px;
+    justify-content: center;
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .aside-component i {
+    font-size: 1rem;
+  }
+
+  .main {
+    width: 100%;
+  }
+
+  .div-header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .main-block {
+    max-height: 400px;
+    padding: 15px;
+  }
+
+  .container input {
+    max-width: 100%;
+  }
+
+  .order-details {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .order-image img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .address-main-div {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .address-btn {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-div {
+    padding: 15px;
+  }
+
+  .aside-component {
+    min-width: 120px;
+    font-size: 0.8rem;
+    padding: 6px;
+  }
+
+  .div-header p {
+    font-size: 1rem;
+  }
+
+  .container h3 {
+    font-size: 1.1rem;
+  }
+
+  .container input {
+    font-size: 0.9rem;
+    padding: 6px;
+  }
+
+  .container-center button,
+  .btn {
+    padding: 6px 15px;
+    font-size: 0.9rem;
+  }
+
+  .order-content p,
+  .address-div p {
+    font-size: 0.8rem;
+  }
+}
+
+.dashboard-profile {
+  margin-left: 200px;
+  margin-top: 150px;
+  margin-right: 220px;
+  padding: 20px;
+  border: 2px solid #088179;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  color: #000;
+}
+
+.dashboard-profile:hover {
+  transition: 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  scale: 1.1;
+}
+
+.dashboard-profile p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 5px 0;
+}
+
+#address {
+  padding: 10px;
+}
+
+#order {
+  padding: 10px;
+}

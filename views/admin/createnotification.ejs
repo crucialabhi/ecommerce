@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+    <link rel="stylesheet" href="/css/admin/createNotification.css" />
+    <title>Offers - Ecommerce Admin</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <%- include("partials/sidebar.ejs") %>
+
+    <div class="main-content">
+      <div class="header">
+        <h1>Contact To Vendor's</h1>
+      </div>
+      <div class="content">
+        <form id="notification">
+          <label for="notify">notify</label>
+          <select id="notify" name="notifyto"></select>
+
+          <label for="lname">Subject</label>
+          <input
+            type="text"
+            id="Subject"
+            name="Subject"
+            placeholder="subject.."
+          />
+          <label for="lname">Content</label>
+          <input
+            type="text"
+            id="Content"
+            name="Content"
+            placeholder="content.."
+          />
+          <input type="submit" value="Send notification" />
+        </form>
+      </div>
+      <div class="table">
+        <table id="notification">
+          <tr style="background-color: hsl(176, 88%, 27%); color: white;">
+            <td>notification_id</td>
+            <td>notification for</td>
+            <td>notifictation_created_at</td>
+            <td>notification_subject</td>
+            <td>notifictation_is_readed</td>
+          </tr>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+      <%- include("partials/footer.ejs") %>
+    </div>
+  </body>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/javascript/admin/admin.createnotification.js"></script>

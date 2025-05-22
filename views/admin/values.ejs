@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/admin/admin.common.css" />
+    <link rel="stylesheet" href="/css/admin/admin.values.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+    <title>values - Admin panel</title>
+   
+  </head>
+
+  <body>
+        <%- include("partials/sidebar.ejs") %>
+    <div class="container">
+      
+      <div class="app">
+        <div class="content">
+          <form id="valuesform">
+            <label for="Key">Key</label>
+            <input type="text" id="Key" name="Key" placeholder="Key.." />
+
+            <label for="Value">Value</label>
+            <input type="text" id="Value" name="Value" placeholder="Value.." />
+            <label for="cars">Choose for :</label>
+
+            <select name="for" id="for">
+              <option value="privacy-policy">privacy-policy</option>
+              <option value="terms-and-condition">terms-and-condition</option>
+              <option value="website">website</option>
+              <option value="return-policy">return-policy</option>
+              <option value="faq">faq</option>
+            </select>
+
+            <input type="submit" value="create pair" />
+          </form>
+        </div>
+        <h1>values</h1>
+        <label for="cars">filter :</label>
+        <select name="for" id="for" onchange="filter(this.value)">
+          <option value="privacy-policy">privacy-policy</option>
+          <option value="terms-and-condition">terms-and-condition</option>
+          <option value="website">website</option>
+          <option value="return-policy">return-policy</option>
+          <option value="faq">faq</option>
+        </select>
+        <table id="customers">
+          <tr>
+            <th>Value for</th>
+            <th>Key</th>
+            <th>Value</th>
+            <th>updated_at</th>
+            <th>created_at</th>
+            <th>edit</th>
+            <th>delete</th>
+          </tr>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+
+      <%- include("partials/footer.ejs") %>
+    </div>
+  </body>
+  <script src="/javascript/admin/admin.values.js"></script>
+</html>

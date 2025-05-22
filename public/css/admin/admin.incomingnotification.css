@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap');
+
+:root {
+--primary-red: hsl(1, 90%, 64%);
+--primary-blue: hsl(219, 85%, 26%);
+
+--neutral-white: hsl(0, 0%, 100%);
+--neutral-very-light-grayish-blue: hsl(210, 60%, 98%);
+--neutral-light-grayish-blue-1: hsl(211, 68%, 94%);
+--neutral-light-grayish-blue-2: hsl(205, 33%, 90%);
+--neutral-dark-grayish-blue: hsl(219, 12%, 42%);
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-size: 16px;
+color: var(--neutral-very-dark-blue);
+}
+.title{
+    color: #1e3c72;
+}
+
+.container {
+
+width: 100%;
+margin: 0px auto;
+background: var(--neutral-very-light-grayish-blue);
+border: 1px solid var(--neutral-very-light-grayish-blue);
+}
+
+.attribution {
+margin: 50px auto 5px;
+}
+
+.app {
+width: 700px;
+margin: 50px auto;
+background: var(--neutral-white);
+border-radius: 20px;
+padding: 15px 25px;
+}
+
+.app .header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 50px;
+}
+
+.header h2 {
+font-size: 20px;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+}
+
+.header h2 .title {
+font-size: 20px;
+}
+
+.header h2 .unread-notification-number {
+text-align: center;
+background: var(--primary-blue);
+color: var(--neutral-white);
+width: 25px;
+height: 20px;
+font-size: 14px;
+border-radius: 5px;
+}
+
+.header p {
+color: var(--neutral-dark-grayish-blue);
+cursor: pointer;
+}
+
+.header p:hover {
+color: var(--primary-blue);
+}
+
+.app .body {
+margin-top: 15px;
+}
+
+.body .notification {
+background: var(--neutral-very-light-grayish-blue);
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 20px;
+padding: 15px;
+border-radius: 10px;
+cursor: pointer;
+transition: all .3s ease-in-out;
+margin: 10px 0px;
+}
+
+.body .notification:hover {
+background: var(--neutral-light-grayish-blue-1);
+}
+
+.notification-click {
+animation: notification-click .5s ease-in-out forwards;
+}
+
+
+
+@keyframes notification-click {
+0% {
+background: var(--neutral-light-grayish-blue-1);
+}
+
+50% {
+background: var(--neutral-light-grayish-blue-2);
+}
+
+100% {
+background: none;
+}
+}
+
+.notification .avatar {
+width: 8%;
+}
+
+.notification .avatar img {
+width: 100%;
+}
+
+.notification .text {
+width: 92%;
+}
+
+.text .text-top p {
+color: var(--neutral-dark-grayish-blue);
+}
+
+.text .text-top p .profil-name {
+font-weight: 800;
+}
+
+.text .text-top p b {
+color: var(--neutral-dark-grayish-blue);
+display: inline-block;
+}
+
+.text .text-top p .unread-dot {
+display: inline-block;
+width: 10px;
+height: 10px;
+margin: 0px 0px 1px 7px;
+border-radius: 50%;
+background: var(--primary-red);
+}
+
+.text .text-bottom {
+color: rgba(94, 103, 120, .5);
+}
+
+.text .text-top p .b-blue {
+color: var(--primary-blue);
+}
+
+.notification.readed {
+background: none;
+}
+
+.notification.private-message .avatar {
+align-self: start;
+}
+
+.notification.private-message .avatar {
+align-self: start;
+}
+
+.notification.readed .text-bottom p {
+color: var(--neutral-dark-grayish-blue);
+padding: 20px;
+border: 1px solid var(--neutral-light-grayish-blue-2);
+margin-top: 10px;
+}
+
+.notification.readed .text p b {
+display: inline;
+}
+
+.notification.picture .avatar {
+width: 8%;
+}
+
+.notification.picture .text {
+width: 84%;
+}
+
+.notification.picture .commented-picture {
+width: 8%;
+}
+
+.notification.picture .commented-picture img {
+width: 100%;
+}
+
+.ecommerce-footer {
+    margin-left: 260px;
+    flex-grow: 1;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: hsl(176, 88%, 27%);
+    border-radius: 10px;
+    color: #fff;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #f5f5f5;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+    color: #aaa;
+}
+/* responsive */
+@media screen and (max-width: 375px) {
+* {
+font-size: 14px;
+}
+
+.container {
+width: 375px;
+}
+
+.app {
+width: 375px;
+margin: 0 auto;
+padding: 15px 15px;
+}
+
+.notification .avatar {
+width: 15%;
+}
+
+.notification .text {
+width: 85%;
+}
+
+.notification.readed .text-bottom p {
+font-size: 13px;
+}
+
+.notification.picture .avatar {
+width: 15%;
+}
+
+.notification.picture .text {
+width: 70%;
+}
+
+.notification.picture .commented-picture {
+width: 15%;
+}
+}
+.active a{
+    background-color: rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+  }

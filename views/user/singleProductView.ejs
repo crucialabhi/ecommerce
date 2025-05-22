@@ -1,0 +1,73 @@
+<%- include('partials/header') %>
+
+<head>
+  <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+  <title>Product Detail</title>
+
+  <!-- For CSS -->
+  <link rel="stylesheet" href="/css/user/singleProductView.css" />
+
+  <!-- For alert message -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+
+  <!-- For star rating -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+
+</head>
+
+<main>
+  <div class="product-name">
+    <div id="pname" style="display: flex; align-items: center; ">Product name</div>
+  </div>
+
+  <div class="product-details">
+    <div class="left">
+      <div class="image" id="image">
+        <img src="" alt="Product image" />
+      </div>
+
+      <div class="img-group" id="img-group"></div>
+    </div>
+
+    <div class="right">
+      <div class="description">
+        <h1 id="product-name">Item 1</h1>
+        <div class="price">
+          <p id="price">Rs.200</p>
+          <p id="removed-price">Rs.500</p>
+        </div>
+        <p id="description"></p>
+        <ul>
+          <li>6 month guarrantee</li>
+          <li>15 days Return policy</li>
+          <li>Cash on delivery available</li>
+        </ul>
+
+        <label for="color">Color </label>
+        <button id="color" style="background-color: white"></button>
+        <br />
+        <label for="size">Size</label>
+        <button id="size">L</button>
+
+        <div class="addTo">
+          <button id="cart" class="addtocart">Add to cart</button>
+          <button class="addtocart" id="buynow">Buy Now</button>
+          <img src="" alt="wishlist" title="Wishlist" class="wishlist_img" id="wishlist" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div id="can-review"></div>
+  <div class="avg-review" id="avg-review"></div>
+  <div class="reviews" id="reviews"></div>
+</main>
+
+<script src="/javascript/user/user.singleProductView.js">
+  
+</script>
+</body>
+<%- include('partials/footer') %>
+
+</html>

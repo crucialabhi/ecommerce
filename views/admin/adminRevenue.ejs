@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+  <title>Admin Revenue</title>
+  <link rel="stylesheet" href="/css/admin/admin.revenue.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+</head>
+
+<body>
+  <%- include("partials/sidebar.ejs") %>
+
+  <div class="main-content">
+    <!-- header -->
+    <div class="header">
+
+      <h1>Admin Revenue</h1>
+
+      <div class="search" style="display: flex;">
+
+      </div>
+
+    </div>
+
+    <div class="content">
+
+      <div class="content1">
+
+        <div class="cardDetails" id="thismonth">
+          <p>This Month's Revenue </p>
+          <h3 id="thismonthrev" style="color: #00aba9"> </h3>
+        </div>
+
+        <div class="cardDetails" id="lastmonth">
+          <p>Last Month's Revenue </p>
+          <h3 id="lastmonthrev" style="color: #00aba9"> </h3>
+        </div>
+
+        <div class="cardDetails" id="thisyear">
+          <p>This Year's Revenue </p>
+          <h3 id="thisyearrev" style="color: #00aba9"> </h3>
+        </div>
+
+        <div class="cardDetails" id="lastyear">
+          <p>Total Revenue</p>
+          <h3 id="lastyearrev" style="color: #00aba9"> </h3>
+        </div>
+
+      </div>
+
+
+      <div class="content2">
+
+        <div id="charts">
+          <div class="charts-container">
+            <div id="chart1">
+              <h3>Monthly Revenue Trend</h3>
+              <canvas id="myLineChart1"></canvas>
+            </div>
+            <div id="chart2">
+              <h3>Yearly Revenue Comparison</h3>
+              <canvas id="myLineChart2"></canvas>
+            </div>
+          </div>
+          <div id="table-section">
+            <h3>Vendor-Wise Revenue</h3>
+            <table id="revenue_table"></table>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+    <%- include("partials/footer.ejs") %>
+  </div>
+
+</body>
+
+<script src="/javascript/admin/admin.revenue.js"></script>
+
+</html>

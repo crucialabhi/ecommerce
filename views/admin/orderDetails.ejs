@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+    <title>Order Details - E-commerce Admin</title>
+    <link rel="stylesheet" href="/css/admin/admin.orders.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+</head>
+<body>
+  <%- include("partials/sidebar.ejs") %>
+    <div class="main-content">
+        <div class="header">
+            <h1>Order Details</h1>
+        </div>
+        <div class="content">
+
+            <div class="chart2">
+                <h3>Order's Overview.</h3>
+
+                <canvas id="myPieChart"></canvas>
+            </div>
+            
+            <div class="chart3">
+                <h3>Sales Overview.</h3>
+
+                <canvas id="myBarChart" style="min-height: 300px; max-width: 400px;"></canvas>
+              </div>
+
+              <div>
+                <h3>All Product Details.</h3>
+                <table id="orderTabel">
+    
+                </table>
+
+                <div id="paginationNumber"></div>
+
+            </div>
+
+            
+        </div>
+        <%- include("partials/footer.ejs") %>
+    </div>
+
+    
+</body>
+    <script src="/javascript/admin/admin.orders.js"></script>
+</html>

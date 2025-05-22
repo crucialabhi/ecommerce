@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/vendor/vendor.returnRequest.css" />
+    <title>Vendor Return Requests</title>
+  </head>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+  />
+  <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+  
+  <body>
+    <%- include("sidebar.ejs") %>
+    <div class="parentDiv">
+      <h1 id="h1ID">Return Requests</h1>
+      <div class="showRequestBtn"></div>
+      <button
+        id="showReturnRequest"
+        class="active"
+        onclick="showReturnRequest()"
+      >
+        Show Return Request
+      </button>
+      <button id="showReturnRequestHistoy" onclick="showReturnRequestHistoy()">
+        Show Return Request History
+      </button>
+
+      <div id="ReturnRequestDiv"></div>
+      <div class="paginationButtons" id="paginationButtons">
+        <button onclick="first_page_handler()"><<</button>
+        <button onclick="prev_page_handler()"><</button>
+        <button>
+          Page <span id="current_page_id">1</span> of
+          <span id="total_pages_id"></span>
+        </button>
+        <button onclick="next_page_handler()">></button>
+        <button onclick="last_page_handler()">>></button>
+      </div>
+
+      <div id="noReturnRequest"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script src="/javascript/vendor/vendor.returnRequest.js"></script>
+
+  </body>
+
+ 
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+    <title>Pending Verification - Ecommerce Admin</title>
+    <link rel="stylesheet" href="/css/admin/admin.pendingvarification.css" />
+    <link rel="stylesheet" href="/css/admin/admin.common.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <%- include("partials/sidebar.ejs") %>
+    <div class="main-content">
+      <div class="header">
+        <div class="search" style="display: flex; gap: 100px;">
+
+        <h1>Verification Area</h1>
+
+          <div>
+            
+            <input type="text"  id="pvinput" oninput="searchpv()" placeholder="Search company name..."  style="cursor: pointer;"/>
+            <input type="submit" name="" id="searchResultData" value="search"  style="margin-left: 20px;">
+         </div>
+
+        </div>
+
+      </div>
+      <div class="content">
+        <div class="card-container" id="cardcontainer"></div>
+      </div>
+      <%- include("partials/footer.ejs") %>
+    </div>
+  </body>
+  <script src="/javascript/admin/admin.pendingverification.js"></script>
+</html>

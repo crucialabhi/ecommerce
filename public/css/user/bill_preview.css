@@ -1,0 +1,19 @@
+.noitems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #f9f9f9;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .noitems h1 {
+    color: #333;
+    font-size: 24px;
+    margin: 0;
+    font-weight: 600;
+  }

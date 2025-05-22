@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+  <title>Order Details</title>
+  <link rel="stylesheet" href="/css/user/singleOrderRedirect.css">
+
+</head>
+<body onload="getDetails()">
+  <div class="order-container">
+    <center><img src="" alt="Product Image" id="productImage"></center>
+
+    <div class="info" id="productName"><span class="label">Product Name : </span> </div>
+    <div class="info" id="productPrice"><span class="label">Product Price : </span></div>
+    
+    <div class="info" id="address"><span class="label">Address : </span> </div>
+    <div class="info" id="pincode"><span class="label">Pincode : </span> </div>
+    <div class="info" id="city"><span class="label">City : </span> </div>
+    <div class="info" id="state"><span class="label">State : </span></div>
+    
+    <div class="info" id="orderStatus"><span class="label">Order Status : </span></div>
+    <div class="info" id="orderDate"><span class="label">Order Date : </span></div>
+    <div class="info" id="deliveryDate"><span class="label">Delivery Date : </span></div>
+    <div class="info" id="billPreview"><span class="label">Bill Preview : </span></div>
+
+
+    <div class="button-container">
+      <button class="back-btn" onclick="history.back()">Back</button>
+      <button class="refund-btn" id="refund-btn" >Request Refund</button>
+      <div class="refund-div" id="refund-div"></div>
+      <div class="refunded-div" id="refunded-div"></div>
+
+    </div>
+  </div>
+
+<script src="/javascript/user/user.singleOrderRedirect.js">
+  
+  
+</script>
+
+</body>
+</html>

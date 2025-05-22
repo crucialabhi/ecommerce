@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  height: 100%;
+}
+
+.h2Heading {
+  margin: 5%;
+  color: #1e3c72;
+}
+
+.Charts {
+  margin-bottom: 20px;
+
+  flex: 1; /* Allow the bar chart to take available space */
+
+  width: 80%; /* Ensure it takes full width */
+
+  background-color: white;
+
+  box-shadow: 10px 10px 5px rgba(165, 183, 189, 0.753);
+
+  border-radius: 15px;
+}
+
+.ChartsTwo {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%; 
+}
+
+#MonthChartCanvas,
+#revenueChart {
+  flex: 1;
+  max-width: 40%;
+  height: 50%;
+  /* margin-bottom: 150px; */
+  background-color: white;
+  box-shadow: 10px 10px 5px rgba(165, 183, 189, 0.753);
+  border-radius: 15px;
+  justify-content: space-between;
+}
+
+#citySalesChartDiv{
+  flex: 1;
+  width: 100%;
+  height: 50%;
+  /* margin-bottom: 150px; */
+  background-color: white;
+  box-shadow: 10px 10px 5px rgba(165, 183, 189, 0.753);
+  border-radius: 15px;
+}
+
+canvas {
+  width: 100% !important;
+  height: auto !important;
+  padding: 15px;
+  margin-left: 20%;
+}

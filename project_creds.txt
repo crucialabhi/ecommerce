@@ -1,0 +1,10 @@
+admin = admin@gmail.com
+password = admin
+
+vendor = hemal@gmail.com
+password= hemal
+You can create new accounts and add products as your requirements.
+
+user = rb@gmail.com
+password = 1234
+You can create new accounts and add products as your requirements.

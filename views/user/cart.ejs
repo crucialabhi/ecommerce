@@ -1,0 +1,66 @@
+<%- include('partials/header') %>
+
+<head>
+  <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+  <title>Cart</title>
+  <link rel="stylesheet" href="/css/user/cart.css" />
+</head>
+<main>
+  <div class="container">
+    <h1>Shopping Cart</h1>
+    <div id="cart" class="cart">
+      <!-- <div class="cart-row">
+        <div class="image">
+          <p>Image</p>
+        </div>
+        <div class="item-name">
+          <p>Name</p>
+        </div>
+        <div class="price">
+          <p>Price</p>
+        </div>
+        <div class="quantity">
+          <p>Quantity</p>
+        </div>
+        <div class="subtotal">
+          <p>Subtotal</p>
+        </div>
+        <div class="edit">
+          <p>Edit</p>
+        </div>
+        <div class="remove">
+          <p>Remove product</p>
+        </div>
+      </div> -->
+      <hr />
+    </div>
+  </div>
+  <div id="quantityMsg"></div>
+  <div class="order-total" id="order-total">
+    <h3>Cart Total</h3>
+    <table>
+      <tr>
+        <td>Cart Subtotal</td>
+        <td id="cart_subtotal">Rs 00</td>
+      </tr>
+      <tr>
+        <td>Shipping</td>
+        <td id="shipping_charge">Rs 00</td>
+      </tr>
+      <tr>
+        <td>Total</td>
+        <td class="total" id="total">Rs 00</td>
+      </tr>
+    </table>
+
+    <div class="checkoutbtn">
+      <button type="button" id="cartBuyBtn" class="buy-button">
+        Proceed to checkout
+      </button>
+    </div>
+  </div>
+</main>
+<script src="/javascript/user/user.cart.js">
+  
+</script>
+<%- include('partials/footer') %>

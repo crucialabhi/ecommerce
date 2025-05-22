@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    text-align: left;
+}
+h1 {
+    color: #045050;
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #059191;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+.section {
+    margin-bottom: 20px;
+}
+.section h2 {
+    font-size: 1.5em;
+    color: #045050;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.h2Heading {
+  /* margin: 0 0 0 20px; */
+  color: #1e3c72;
+}
+
+.Charts {
+  margin-left: 40%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  width: 30%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ChartsTwo {
+  margin-left: 15%;
+  margin-bottom: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+
+#lineChart,
+
+#revenueLinechart {
+  width: 500px;
+  height: auto;
+  box-shadow: 10px 10px 5px rgba(165, 183, 189, 0.753);
+  border-radius: 20px;
+}
+
+#BarChart {
+  box-shadow: 10px 10px 5px rgba(165, 183, 189, 0.753);
+  width: 600px;
+  height: auto;
+  border-radius: 20px
+}
+
+.noChartData {
+  margin-top: 10%;
+  height: 500px;
+  padding: 10%;
+  font-size: 30px;
+  color: hsl(176, 88%, 27%);
+  text-align: center;
+}

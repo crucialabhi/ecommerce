@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/vendor/contactToAdmin.css" />
+    <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+    <title>Vendor Contact Admin</title>
+    <link rel="stylesheet" href="/css/vendor/common.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />  
+  </head>
+
+  <%- include("sidebar.ejs") %>
+  <body>
+
+    <div class="main-content">
+      <div class="header">
+        <h1>Contact Admin</h1>
+      </div>
+      <div class="content">
+        <form id="notification">
+          <label for="notify">notify</label>
+          <input type="text" value="admin" name="admin" readonly>
+          <label for="notify">subject</label>
+          <input
+            type="text"
+            id="Subject"
+            name="Subject"
+            placeholder="subject.."
+          />
+          <label for="lname">Content</label>
+          <input
+            type="text"
+            id="Content"
+            name="Content"
+            placeholder="content.."
+          />
+          <input type="submit" value="Send notification" />
+        </form>
+      </div>
+      
+  </body>
+  <script src="/javascript/vendor/vendor.contactToAdmin.js"></script>
+<!-- <script>
+    
+let form = document.getElementById("notification")
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    let formdata = new FormData(form);
+    const response = await fetch("/vendor/contacttoadmin", {
+      method: "POST",
+     
+      body: formdata,
+    });
+    
+    if (!response.ok) {
+      window.location.href = '/auth/vendor-login'
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const json = await response.json();
+
+    let results = json.message;
+    alert(results);
+    window.location.href = "/vendor/contact-to-admin"
+  });
+</script> -->
+</html>

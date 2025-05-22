@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vendor Products</title>
+    <link rel="stylesheet" href="/css/vendor/vendor.listProducts.css" />
+  </head>
+  <!-- <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      margin-left: 310px;
+    }
+    body {
+      background-color: #f7f8fa;
+    }
+    .ProductDiv {
+      border: 2px solid #d8dce4;
+      border-radius: 5px;
+      width: 450px;
+      height: 250px;
+      /* margin-left: 250px; */
+      margin-bottom: 10px;
+      display: flex;
+      background-color: white;
+      box-shadow: 10px 10px 5px rgba(165, 183, 189, 0.753);
+      margin-left: 10%;
+    }
+    /* #imagediv{
+    
+    height:100%;
+    border: 1px solid black;
+    margin-left: 250px;
+
+   } */
+    .ProductDiv .imgid {
+      width: 50%;
+      height: 100%;
+    }
+    .ProductDiv .listProductsDetails {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+    }
+    .editBtn {
+      cursor: pointer;
+    }
+    .deleteBtn {
+      cursor: pointer;
+    }
+    .editStockButton,
+    .updatePriceButton {
+      margin-top: 10px;
+      background-color: hsl(176, 88%, 27%);
+      border-color: hsl(176, 88%, 27%);
+      border-radius: 5px;
+      padding: 5px 10px;
+      color: white;
+      cursor: pointer;
+    }
+    #popup,
+    #updatePricePopup {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      background-color: rgba(255, 255, 255, 0.76);
+    }
+    .popupdiv {
+      background-color: white;
+      height: 20%;
+      width: 20%;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid hsl(176, 88%, 27%);
+      border-radius: 5px;
+      padding: 1%;
+    }
+    .topdiv {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .bottom {
+      height: 80%;
+      /* display: flex; */
+      align-items: center;
+      justify-content: center;
+    }
+    .bottom .stockInput {
+      /* height: 15%; */
+      margin-right: 5px;
+    }
+    #crossIcon {
+      cursor: pointer;
+    }
+    .submitBtn {
+      background-color: hsl(176, 88%, 27%);
+      border-color: hsl(176, 88%, 27%);
+      border-radius: 5px;
+      padding: 3px 10px;
+      color: white;
+      cursor: pointer;
+      width: 20%;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+
+      padding: 10px;
+      margin-left: 250px;
+    }
+    /* .container > div {
+  background-color: #f1f1f1;
+  border: 1px solid black;
+ 
+  font-size: 30px;
+  text-align: center;
+} */
+    .container-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      gap: 5%;
+    }
+    .container-div select {
+      width: 100%;
+      height: 30px;
+      border: 1px solid hsl(113, 15%, 90%);
+      outline: none;
+      /* background: hsl(176, 88%, 27%); */
+    }
+    .container-div input,
+    textarea {
+      width: 50%;
+      height: 30px;
+      border: 1px solid hsl(113, 15%, 90%);
+      outline: none;
+    }
+    .container-div input:focus {
+      border: 2px solid hsl(176, 88%, 27%);
+    }
+    .container-div h3 {
+      margin: 0px;
+    }
+    .container-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container-center input {
+      margin: 0px 5px;
+      width: 50%;
+      height: 35px;
+      font-weight: 500;
+      background-color: hsl(176, 88%, 27%);
+      border-color: hsl(176, 88%, 27%);
+      color: white;
+      border-radius: 5px;
+      outline: none;
+    }
+    .container-center input:hover,
+    input:focus {
+      background-color: transparent;
+      border: 2px solid;
+      border-color: hsl(176, 88%, 27%);
+      color: hsl(176, 88%, 27%);
+      border-radius: 5px;
+      outline: none;
+    }
+    .searchbar {
+      margin-left: 50%;
+    }
+    #searchInput {
+      padding: 6px;
+  margin-top: 1px;
+  margin-left: 60%;
+  
+  font-size: 17px;
+  border: none;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-image: url('searchicon.png');
+    }
+    #noProducts {
+      margin-left: 30%;
+      font-size: larger;
+      font-weight: bold;
+    }
+    .paginationButtons {
+      margin-left: 50%;
+    }
+    .paginationButtons > button {
+      background-color: hsl(176, 88%, 27%);
+      padding: 1% 1.5%;
+      color: white;
+      border-radius: 5px;
+      border: 1px solid hsl(176, 88%, 27%);
+    }
+  </style> -->
+ 
+  <body>
+    <%- include("sidebar.ejs") %>
+    <div class="main-div">
+      <h1>Product Listing</h1>
+
+      <div class="searchbar">
+        <input
+          type="text"
+          placeholder="Search Product ...."
+          name="search"
+          id="searchInput"
+          onkeyup="searchProduct()"
+        />
+      </div>
+  
+      <div class="container" id="listProducts"></div>
+    </div>
+   
+
+    <div id="popup">
+      <div class="popupdiv">
+        <div class="topdiv">
+          <i
+            class="fa-solid fa-xmark"
+            id="crossIcon"
+            onclick="closePopUp()"
+          ></i>
+        </div>
+        <div class="bottom">
+          <div class="container-div">
+            <input
+              type="number"
+              id="stockInput"
+              class="stockInput"
+              placeholder="Add Stocks"
+            />
+          </div>
+          <div class="container-center">
+            <input
+              id="stockSubmitID"
+              class="submitBtn"
+              type="submit"
+              value="submit"
+              onclick="submitStock()"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="updatePricePopup">
+      <div class="popupdiv">
+        <div class="topdiv">
+          <i
+            class="fa-solid fa-xmark"
+            id="crossIcon"
+            onclick="closePricePopUp()"
+          ></i>
+        </div>
+        <div class="bottom">
+          <div class="container-div">
+            <input
+              type="number"
+              id="priceInput"
+              class="priceInput"
+              placeholder="Update Price"
+            />
+          </div>
+          <div class="container-center">
+            <input
+              id="priceSubmitID"
+              class="submitBtn"
+              type="submit"
+              value="submit"
+              onclick="submitPrice()"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="paginationButtons" id="paginationButtons">
+      <button onclick="first_page_handler()"><<</button>
+      <button onclick="prev_page_handler()"><</button>
+      <button>
+        Page <span id="current_page_id">1</span> of
+        <span id="total_pages_id"></span>
+      </button>
+      <button onclick="next_page_handler()">></button>
+      <button onclick="last_page_handler()">>></button>
+    </div>
+    <script src="/javascript/vendor/vendor.listProducts.js"></script>
+  </body>
+  <!-- <script>
+    document.getElementById('searchInput').value = ''
+    const getProducts = async () => {
+      const url = "/vendor/getAllProducts";
+      try {
+        const response = await fetch(url, {
+          method: "GET",
+        });
+
+        const results = await response.json();
+
+        if (!results.data.success) {
+          alert(results.message);
+          window.location.href = "/auth/vendor-login";
+        }
+        console.log("All products result", results);
+        let mainProductDiv = document.getElementById("listProducts");
+        console.log(results.data.showProductsResult.length);
+        if (results.data.showProductsResult.length == 0) {
+          mainProductDiv.innerHTML = `<div id="noProducts">No Products added <div/>`;
+          document.getElementById("paginationButtons").style.display = "none";
+          document.getElementById("");
+        } else {
+          let str = "";
+
+          for (let i = 0; i < results.data.showProductsResult.length; i++) {
+            let imagesArray =
+              results.data.showProductsResult[i].image_path.split(",");
+            str += `<div class="ProductDiv" >
+
+
+          <img class="imgid" src="${imagesArray[0]}">
+
+          <div class="listProductsDetails">
+
+          <p>${results.data.showProductsResult[i].product_name}</p>
+          <div class="otherDetail">
+          <p> Available stock : ${results.data.showProductsResult[i].available_stock}</p>
+          <p> Stock : ${results.data.showProductsResult[i].stock}</p>
+          <p> Size : ${results.data.showProductsResult[i].size}</p>
+          <p> Color : ${results.data.showProductsResult[i].color}</p>
+          <p> Price : ${results.data.showProductsResult[i].price}</p>
+          <i onclick="edit(this)" id=${results.data.showProductsResult[i].vendor_product_id} class="fa-solid fa-pen editBtn"></i>  <i onclick="deleteProduct(this)" id=${results.data.showProductsResult[i].vendor_product_id} class="fa-solid fa-trash"></i>
+          <button class="editStockButton" onclick="editStock(this)" id=${results.data.showProductsResult[i].vendor_product_id}>Add stock</button>
+          <button class="updatePriceButton" onclick="updatePrice(this)" id=${results.data.showProductsResult[i].vendor_product_id}>Update Price</button>
+            </div>
+
+          </div>
+            
+          </div>`;
+          }
+          mainProductDiv.innerHTML = str;
+        }
+
+        if (results.data.success) {
+          // alert("Product details");
+        } else {
+          alert(results.message);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    getProducts();
+
+    async function edit(btn) {
+      console.log("View of product id ", btn.id);
+      window.location.href = `/vendor/editProduct?vendorProductID=${btn.id}`;
+    }
+
+    async function editStock(btn) {
+      console.log("stock button id", btn.id);
+      document.getElementById("popup").style.display = "block";
+      document.getElementById("stockSubmitID").onclick = async function () {
+        let inputValue = document.getElementById("stockInput").value;
+        await submitStock(btn.id, inputValue);
+      };
+    }
+
+    async function updatePrice(btn) {
+      console.log("price button id", btn.id);
+      document.getElementById("updatePricePopup").style.display = "block";
+      document.getElementById("priceSubmitID").onclick = async function () {
+        let inputValue = document.getElementById("priceInput").value;
+        await submitPrice(btn.id, inputValue);
+      };
+    }
+
+    function closePopUp() {
+      document.getElementById("popup").style.display = "none";
+    }
+
+    function closePricePopUp() {
+      document.getElementById("updatePricePopup").style.display = "none";
+    }
+    async function submitStock(VendorProductID, inputValue) {
+
+const url = "/vendor/editStock";
+try {
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      VendorProductID: VendorProductID,
+      inputValue: inputValue,
+    }),
+  });
+
+  const results = await response.json();
+
+  if (!results.data.success) {
+    alert(results.message);
+    window.location.href = "/auth/vendor-login";
+  }
+  if (results.data.success) {
+    document.getElementById("stockInput").value = "";
+    getProducts();
+    alert("Added successfully");
+    document.getElementById("popup").style.display = "none";
+  }
+  getFirstNineProducts()
+} catch (error) {
+  console.log(error);
+}
+}
+
+    async function submitPrice(VendorProductID, inputValue) {
+      console.log("submit button id of update price popup", VendorProductID);
+
+      const url = "/vendor/updatePrice";
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            VendorProductID: VendorProductID,
+            inputValue: inputValue,
+          }),
+        });
+
+        const results = await response.json();
+
+        if (!results.data.success) {
+          alert(results.message);
+          window.location.href = "/auth/vendor-login";
+        }
+        if (results.data.success) {
+          document.getElementById("priceInput").value = "";
+          getProducts();
+          alert("Price updated successfully");
+          document.getElementById("updatePricePopup").style.display = "none";
+          getFirstNineProducts()
+        }
+        
+        console.log(results);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    async function searchProduct(){
+      document.getElementById('paginationButtons').style.display = 'none'
+      let searchValue = document.getElementById('searchInput').value
+  
+      console.log(searchValue);
+      const url = `/vendor/getSearchedProduct?SearchValue=${searchValue}`;
+      try {
+        const response = await fetch(url, {
+          method: "GET",
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        });
+
+        const results = await response.json();
+
+        if (!results.data.success) {
+          alert(results.message);
+          window.location.href = "/auth/vendor-login";
+        }
+        console.log("All products search result", results);
+        let mainProductDiv = document.getElementById("listProducts");
+        console.log(results.data.showSearchProductsResult.length);
+
+        let str = "";
+
+        for (let i = 0; i < results.data.showSearchProductsResult.length; i++) {
+          let imagesArray =
+            results.data.showSearchProductsResult[i].image_path.split(",");
+          str += `<div class="ProductDiv" >
+
+        
+       <img class="imgid" src="${imagesArray[0]}">
+  
+      <div class="listProductsDetails">
+        
+        
+        <p>${results.data.showSearchProductsResult[i].product_name}</p>
+        <div class="otherDetail">
+        <p> Available stock : ${results.data.showSearchProductsResult[i].available_stock}</p>
+        <p> Stock : ${results.data.showSearchProductsResult[i].stock}</p>
+        <p> Size : ${results.data.showSearchProductsResult[i].size}</p>
+        <p> Color : ${results.data.showSearchProductsResult[i].color}</p>
+        <p> Price : ${results.data.showSearchProductsResult[i].price}</p>
+        <i onclick="edit(this)" id=${results.data.showSearchProductsResult[i].vendor_product_id} class="fa-solid fa-pen editBtn"></i>  <i onclick="deleteProduct(this)" id=${results.data.showSearchProductsResult[i].vendor_product_id} class="fa-solid fa-trash"></i>
+        <button class="editStockButton" onclick="editStock(this)" id=${results.data.showSearchProductsResult[i].vendor_product_id}>Add stock</button>
+        <button class="updatePriceButton" onclick="updatePrice(this)" id=${results.data.showSearchProductsResult[i].vendor_product_id}>Update Price</button>
+          </div>
+     
+        </div>
+          
+        </div>`;
+        }
+        mainProductDiv.innerHTML = str
+        if(searchValue == ''){
+          document.getElementById('paginationButtons').style.display = 'block'
+        console.log("i m here ");
+        getFirstNineProducts()
+      }
+
+        if (results.data.success) {
+          // alert("Product details");
+        } else {
+          alert(results.message);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    async function deleteProduct(btn) {
+      let confirmValue = confirm("do you want to delete this product ?");
+      console.log(confirmValue);
+      if (confirmValue) {
+        let deletebtnID = btn.id;
+        console.log("ID OF DELETE BUTTON", deletebtnID);
+
+        const url = `/vendor/deleteProduct?deleteId=${deletebtnID}`;
+        try {
+          const response = await fetch(url, {
+            method: "GET",
+            headers: {
+              Authorization: localStorage.getItem("token"),
+            },
+          });
+
+          const results = await response.json();
+
+          if (!results.data.success) {
+            alert(results.message);
+            window.location.href = "/auth/vendor-login";
+          } else {
+            console.log("in else");
+            await getProducts();
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      } else {
+        return;
+      }
+    }
+
+    async function getFirstNineProducts() {
+      const url = "/vendor/getFirstNineProducts";
+
+      try {
+        const response = await fetch(url, {
+          method: "GET",
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        });
+
+        const results = await response.json();
+        console.log("result of first nine products is ", results);
+        Last_page = results.data.total_pages;
+
+        document.getElementById("current_page_id").innerText =
+          results.data.current_page;
+        document.getElementById("total_pages_id").innerText =
+          results.data.total_pages;
+
+        if (!results.data.success) {
+          alert(results.message);
+          window.location.href = "/auth/vendor-login";
+        }
+
+        let mainProductDiv = document.getElementById("listProducts");
+        console.log(results.data.getFirstNineProducts.length);
+        if (results.data.getFirstNineProducts.length == 0) {
+          mainProductDiv.innerHTML = `<div id="noProducts">No Products added <div/>`;
+          document.getElementById("");
+        } else {
+          let str = "";
+
+          for (let i = 0; i < results.data.getFirstNineProducts.length; i++) {
+            let imagesArray =
+              results.data.getFirstNineProducts[i].image_path.split(",");
+            str += `<div class="ProductDiv" >
+
+
+          <img class="imgid" src="${imagesArray[0]}">
+
+          <div class="listProductsDetails">
+
+          <p>${results.data.getFirstNineProducts[i].product_name}</p>
+          <div class="otherDetail">
+          <p> Available stock : ${results.data.getFirstNineProducts[i].available_stock}</p>
+          <p> Stock : ${results.data.getFirstNineProducts[i].stock}</p>
+          <p> Size : ${results.data.getFirstNineProducts[i].size}</p>
+          <p> Color : ${results.data.getFirstNineProducts[i].color}</p>
+          <p> Price : ${results.data.getFirstNineProducts[i].price}</p>
+          <i onclick="edit(this)" id=${results.data.getFirstNineProducts[i].vendor_product_id} class="fa-solid fa-pen editBtn"></i>  <i onclick="deleteProduct(this)" id=${results.data.getFirstNineProducts[i].vendor_product_id} class="fa-solid fa-trash"></i>
+          <button class="editStockButton" onclick="editStock(this)" id=${results.data.getFirstNineProducts[i].vendor_product_id}>Add stock</button>
+          <button class="updatePriceButton" onclick="updatePrice(this)" id=${results.data.getFirstNineProducts[i].vendor_product_id}>Update Price</button>
+            </div>
+
+          </div>
+            
+          </div>`;
+          }
+          mainProductDiv.innerHTML = str;
+        }
+      } catch (error) {
+        console.error(error.message);
+      }
+    }
+
+    getFirstNineProducts();
+
+    async function first_page_handler() {
+      const url = "/vendor/getRemainingProducts";
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            Authorization: localStorage.getItem("token"),
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ First_Page: 0 }),
+        });
+
+        const results = await response.json();
+        console.log("result of remaining products are ", results);
+
+        document.getElementById("current_page_id").innerText =
+          results.data.current_page;
+        document.getElementById("total_pages_id").innerText =
+          results.data.total_pages;
+
+        if (!results.data.success) {
+          alert(results.message);
+          window.location.href = "/auth/vendor-login";
+        }
+
+        let mainProductDiv = document.getElementById("listProducts");
+        console.log(results.data.getRemainingProducts.length);
+        if (results.data.getRemainingProducts.length == 0) {
+          mainProductDiv.innerHTML = `<div id="noProducts">No Products added <div/>`;
+          document.getElementById("");
+        } else {
+          let str = "";
+
+          for (let i = 0; i < results.data.getRemainingProducts.length; i++) {
+            let imagesArray =
+              results.data.getRemainingProducts[i].image_path.split(",");
+            str += `<div class="ProductDiv" >
+
+
+          <img class="imgid" src="${imagesArray[0]}">
+
+          <div class="listProductsDetails">
+
+          <p>${results.data.getRemainingProducts[i].product_name}</p>
+          <div class="otherDetail">
+          <p> Available stock : ${results.data.getRemainingProducts[i].available_stock}</p>
+          <p> Stock : ${results.data.getRemainingProducts[i].stock}</p>
+          <p> Size : ${results.data.getRemainingProducts[i].size}</p>
+          <p> Color : ${results.data.getRemainingProducts[i].color}</p>
+          <p> Price : ${results.data.getRemainingProducts[i].price}</p>
+          <i onclick="edit(this)" id=${results.data.getRemainingProducts[i].vendor_product_id} class="fa-solid fa-pen editBtn"></i>  <i onclick="deleteProduct(this)" id=${results.data.getRemainingProducts[i].vendor_product_id} class="fa-solid fa-trash"></i>
+          <button class="editStockButton" onclick="editStock(this)" id=${results.data.getRemainingProducts[i].vendor_product_id}>Add stock</button>
+          <button class="updatePriceButton" onclick="updatePrice(this)" id=${results.data.getRemainingProducts[i].vendor_product_id}>Update Price</button>
+            </div>
+
+          </div>
+            
+          </div>`;
+          }
+          mainProductDiv.innerHTML = str;
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    async function prev_page_handler() {
+      const url = "/vendor/getRemainingProducts";
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            Authorization: localStorage.getItem("token"),
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ Previous_page: 0 }),
+        });
+
+        const results = await response.json();
+        console.log("result of remaining products are ", results);
+
+        document.getElementById("current_page_id").innerText =
+          results.data.current_page;
+        document.getElementById("total_pages_id").innerText =
+          results.data.total_pages;
+
+        if (!results.data.success) {
+          alert(results.message);
+          window.location.href = "/auth/vendor-login";
+        }
+
+        let mainProductDiv = document.getElementById("listProducts");
+        console.log(results.data.getRemainingProducts.length);
+        if (results.data.getRemainingProducts.length == 0) {
+          mainProductDiv.innerHTML = `<div id="noProducts">No Products added <div/>`;
+          document.getElementById("");
+        } else {
+          let str = "";
+
+          for (let i = 0; i < results.data.getRemainingProducts.length; i++) {
+            let imagesArray =
+              results.data.getRemainingProducts[i].image_path.split(",");
+            str += `<div class="ProductDiv" >
+
+
+          <img class="imgid" src="${imagesArray[0]}">
+
+          <div class="listProductsDetails">
+
+          <p>${results.data.getRemainingProducts[i].product_name}</p>
+          <div class="otherDetail">
+          <p> Available stock : ${results.data.getRemainingProducts[i].available_stock}</p>
+          <p> Stock : ${results.data.getRemainingProducts[i].stock}</p>
+          <p> Size : ${results.data.getRemainingProducts[i].size}</p>
+          <p> Color : ${results.data.getRemainingProducts[i].color}</p>
+          <p> Price : ${results.data.getRemainingProducts[i].price}</p>
+          <i onclick="edit(this)" id=${results.data.getRemainingProducts[i].vendor_product_id} class="fa-solid fa-pen editBtn"></i>  <i onclick="deleteProduct(this)" id=${results.data.getRemainingProducts[i].vendor_product_id} class="fa-solid fa-trash"></i>
+          <button class="editStockButton" onclick="editStock(this)" id=${results.data.getRemainingProducts[i].vendor_product_id}>Add stock</button>
+          <button class="updatePriceButton" onclick="updatePrice(this)" id=${results.data.getRemainingProducts[i].vendor_product_id}>Update Price</button>
+            </div>
+
+          </div>
+            
+          </div>`;
+          }
+          mainProductDiv.innerHTML = str;
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    async function next_page_handler() {
+      const url = "/vendor/getRemainingProducts";
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            Authorization: localStorage.getItem("token"),
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ Next_page: 0 }),
+        });
+
+        const results = await response.json();
+        console.log("result of remaining products are ", results);
+
+        document.getElementById("current_page_id").innerText =
+          results.data.current_page;
+        document.getElementById("total_pages_id").innerText =
+          results.data.total_pages;
+
+        if (!results.data.success) {
+          alert(results.message);
+          window.location.href = "/auth/vendor-login";
+        }
+
+        let mainProductDiv = document.getElementById("listProducts");
+        console.log(results.data.getRemainingProducts.length);
+        if (results.data.getRemainingProducts.length == 0) {
+          mainProductDiv.innerHTML = `<div id="noProducts">No Products added <div/>`;
+          document.getElementById("");
+        } else {
+          let str = "";
+
+          for (let i = 0; i < results.data.getRemainingProducts.length; i++) {
+            let imagesArray =
+              results.data.getRemainingProducts[i].image_path.split(",");
+            str += `<div class="ProductDiv" >
+
+
+          <img class="imgid" src="${imagesArray[0]}">
+
+          <div class="listProductsDetails">
+
+          <p>${results.data.getRemainingProducts[i].product_name}</p>
+          <div class="otherDetail">
+          <p> Available stock : ${results.data.getRemainingProducts[i].available_stock}</p>
+          <p> Stock : ${results.data.getRemainingProducts[i].stock}</p>
+          <p> Size : ${results.data.getRemainingProducts[i].size}</p>
+          <p> Color : ${results.data.getRemainingProducts[i].color}</p>
+          <p> Price : ${results.data.getRemainingProducts[i].price}</p>
+          <i onclick="edit(this)" id=${results.data.getRemainingProducts[i].vendor_product_id} class="fa-solid fa-pen editBtn"></i>  <i onclick="deleteProduct(this)" id=${results.data.getRemainingProducts[i].vendor_product_id} class="fa-solid fa-trash"></i>
+          <button class="editStockButton" onclick="editStock(this)" id=${results.data.getRemainingProducts[i].vendor_product_id}>Add stock</button>
+          <button class="updatePriceButton" onclick="updatePrice(this)" id=${results.data.getRemainingProducts[i].vendor_product_id}>Update Price</button>
+            </div>
+
+          </div>
+            
+          </div>`;
+          }
+          mainProductDiv.innerHTML = str;
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    async function last_page_handler() {
+      const url = "/vendor/getRemainingProducts";
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            Authorization: localStorage.getItem("token"),
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ Last_page: 0 }),
+        });
+
+        const results = await response.json();
+        console.log("result of remaining products are ", results);
+
+        document.getElementById("current_page_id").innerText =
+          results.data.current_page;
+        document.getElementById("total_pages_id").innerText =
+          results.data.total_pages;
+
+        if (!results.data.success) {
+          alert(results.message);
+          window.location.href = "/auth/vendor-login";
+        }
+
+        let mainProductDiv = document.getElementById("listProducts");
+        console.log(results.data.getRemainingProducts.length);
+        if (results.data.getRemainingProducts.length == 0) {
+          mainProductDiv.innerHTML = `<div id="noProducts">No Products added <div/>`;
+          document.getElementById("");
+        } else {
+          let str = "";
+
+          for (let i = 0; i < results.data.getRemainingProducts.length; i++) {
+            let imagesArray =
+              results.data.getRemainingProducts[i].image_path.split(",");
+            str += `<div class="ProductDiv" >
+
+
+          <img class="imgid" src="${imagesArray[0]}">
+
+          <div class="listProductsDetails">
+
+          <p>${results.data.getRemainingProducts[i].product_name}</p>
+          <div class="otherDetail">
+          <p> Available stock : ${results.data.getRemainingProducts[i].available_stock}</p>
+          <p> Stock : ${results.data.getRemainingProducts[i].stock}</p>
+          <p> Size : ${results.data.getRemainingProducts[i].size}</p>
+          <p> Color : ${results.data.getRemainingProducts[i].color}</p>
+          <p> Price : ${results.data.getRemainingProducts[i].price}</p>
+          <i onclick="edit(this)" id=${results.data.getRemainingProducts[i].vendor_product_id} class="fa-solid fa-pen editBtn"></i>  <i onclick="deleteProduct(this)" id=${results.data.getRemainingProducts[i].vendor_product_id} class="fa-solid fa-trash"></i>
+          <button class="editStockButton" onclick="editStock(this)" id=${results.data.getRemainingProducts[i].vendor_product_id}>Add stock</button>
+          <button class="updatePriceButton" onclick="updatePrice(this)" id=${results.data.getRemainingProducts[i].vendor_product_id}>Update Price</button>
+            </div>
+
+          </div>
+            
+          </div>`;
+          }
+          mainProductDiv.innerHTML = str;
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  </script> -->
+</html>

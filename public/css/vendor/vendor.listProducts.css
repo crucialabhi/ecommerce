@@ -1,0 +1,208 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  /* margin-left: 310px; */
+  margin-left: 5.5%;
+}
+body {
+  background-color: #f7f8fa;
+}
+.main-div {
+  width: 85%;
+  margin-left: 15%;
+}
+.ProductDiv {
+  border: 2px solid #d8dce4;
+  border-radius: 5px;
+  width: 450px;
+  height: 250px;
+  /* margin-left: 250px; */
+  margin-bottom: 10px;
+  display: flex;
+  background-color: white;
+  box-shadow: 10px 10px 5px rgba(165, 183, 189, 0.753);
+  /* margin-left: 10%; */
+}
+/* #imagediv{
+
+height:100%;
+border: 1px solid black;
+margin-left: 250px;
+
+} */
+.ProductDiv .imgid {
+  width: 50%;
+  height: 100%;
+}
+.ProductDiv .listProductsDetails {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.editBtn {
+  cursor: pointer;
+}
+.deleteBtn {
+  cursor: pointer;
+}
+.editStockButton,
+.updatePriceButton {
+  margin-top: 10px;
+  background-color: hsl(176, 88%, 27%);
+  border-color: hsl(176, 88%, 27%);
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
+}
+#popup,
+#updatePricePopup {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.76);
+}
+.popupdiv {
+  background-color: white;
+  /* height: 20%; */
+  width: 20%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid hsl(176, 88%, 27%);
+  border-radius: 5px;
+  padding: 1%;
+}
+.topdiv {
+  display: flex;
+  justify-content: flex-end;
+}
+.bottom {
+  height: 80%;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+}
+.bottom .stockInput {
+  /* height: 15%; */
+  margin-right: 5px;
+}
+#crossIcon {
+  cursor: pointer;
+}
+.submitBtn {
+  background-color: hsl(176, 88%, 27%);
+  border-color: hsl(176, 88%, 27%);
+  border-radius: 5px;
+  padding: 3px 10px;
+  color: white;
+  cursor: pointer;
+  width: 20%;
+}
+
+.container {
+  /* display: grid; */
+  /* grid-template-columns: auto auto auto;
+  padding: 10px;
+  margin-left: 250px; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+/* .container > div {
+background-color: #f1f1f1;
+border: 1px solid black;
+
+font-size: 30px;
+text-align: center;
+} */
+.container-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 5%;
+}
+.container-div select {
+  width: 100%;
+  height: 30px;
+  border: 1px solid hsl(113, 15%, 90%);
+  outline: none;
+  /* background: hsl(176, 88%, 27%); */
+}
+.container-div input,
+textarea {
+  width: 50%;
+  height: 30px;
+  border: 1px solid hsl(113, 15%, 90%);
+  outline: none;
+}
+.container-div input:focus {
+  border: 2px solid hsl(176, 88%, 27%);
+}
+.container-div h3 {
+  margin: 0px;
+}
+.container-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-center input {
+  margin: 0px 5px;
+  width: 50%;
+  height: 35px;
+  font-weight: 500;
+  background-color: hsl(176, 88%, 27%);
+  border-color: hsl(176, 88%, 27%);
+  color: white;
+  border-radius: 5px;
+  outline: none;
+}
+.container-center input:hover,
+input:focus {
+  background-color: transparent;
+  border: 2px solid;
+  border-color: hsl(176, 88%, 27%);
+  color: hsl(176, 88%, 27%);
+  border-radius: 5px;
+  outline: none;
+}
+.searchbar {
+  margin-left: 33%;
+}
+#searchInput {
+  padding: 6px;
+margin-top: 1px;
+margin-left: 60%;
+
+font-size: 17px;
+border: none;
+border: 1px solid black;
+border-radius: 15px;
+background-image: url('searchicon.png');
+}
+#noProducts {
+  margin-left: 30%;
+  font-size: larger;
+  font-weight: bold;
+}
+.paginationButtons {
+  margin-left: 50%;
+}
+.paginationButtons > button {
+  background-color: hsl(176, 88%, 27%);
+  padding: 1% 1.5%;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid hsl(176, 88%, 27%);
+}

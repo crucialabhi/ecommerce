@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/vendor/vendor.orderRequest.css" />
+    <title>Vendor Order Requests</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+  <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+   
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+  </head>
+  <body>
+    <%- include("sidebar.ejs") %>
+
+    <main>
+      <div  class="orderBtnsDiv">
+        <button onclick="getOrderRequests()" class="orderRequestBtn" id="orderRequestBtn">
+          Order Requests
+        </button>
+        <button onclick="getOrderHistory()" class="orderHistoryBtn" id="orderHistoryBtn">
+          Order History
+        </button>
+      </div>
+      <div id="orderRequestsTable"></div>
+      <div class="parentDiv" id="parentDiv">
+        <div class="filter" id="filter">
+          <!-- <p id="filterPara">Filter By Order Status</p>
+          <select
+            name="filterSelect"
+            id="filterSelect"
+            onchange="filterSelect(this)"
+          >
+            <option value="">Select order status</option>
+            <option value="vendorVerification">Vendor Verification</option>
+            <option value="Pending">Pending</option>
+            <option value="complete">Complete</option>
+            <option value="rejected">Rejected</option>
+          </select> -->
+        </div>
+        <div id="orderDetailDiv"></div>
+      </div>
+    </main>
+   
+     <script src="/javascript/vendor/vendor.orderRequest.js"></script>
+  </body>
+</html>

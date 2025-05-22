@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/vendor/vendor.profile.css" />
+    <title>Profile Page</title>
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" />
+<link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+
+<body>
+    <%- include("sidebar.ejs") %>
+    <div class="parentdiv">
+        
+        <form action="" id="profileDetailForm" onsubmit="editProfile(event)">
+            <div class="account_status">
+                <button id="account_status_btn" type="button">#</button>
+            </div>
+            <div class="productImgLeft">
+                <label for="ProfileImgId" class="productImgLabel"
+                  >Select Photo</label
+                ><br />
+                  <input
+                  type="file"
+                  id="ProfileImgId"
+                  name="profileImg"
+                  onchange="preview(this)"
+                
+                />
+            </div>
+            <div class="imgdiv">
+                <!-- <label for="profileImgId" class="profileImgLabel">Select Photo</label><br>
+                <input type="file" id="ProfileImgId" name="profileImg" onchange="preview(this)" multiple> -->
+               
+                <div class="imgDiv">
+                    <img src="" alt="" id="imgID">
+                   
+                </div>
+            </div>
+    
+        
+        <div class="names">
+            <div class="inputFields">
+                <label for="fname" id="fname">First Name</label>
+                <input name="fname" id="firstName" type="text"></input>
+            </div>
+            <div class="inputFields">
+                <label for="lname" id="lname">Last Name</label>
+           
+                <input name="lname" id="lastName" type="text"></input>
+            </div>
+            <div class="inputFields">
+                <label for="contactNum" id="contactNum">Mobile Number</label>
+            <input name="MobileNum" id="MobileNum" type="text"></input>
+    
+            </div>
+            <div class="inputFields">
+                <label for="CompanyName" id="CompanyNameLabel">Company Name</label>
+           
+                <input name="companyName" id="companyName" type="text"></input>
+            </div>
+            
+        </div>
+            <div class="submitButton">
+                <button id="EditProfile"  type="submit">Save Changes</button>
+            </div>
+        </form>
+    </div>
+  
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+<script src="/javascript/vendor/vendor.profile.js"></script>
+
+</html>

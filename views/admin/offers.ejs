@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/admin/admin.offers.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link
+      rel="icon"
+      href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png"
+    />
+    <title>Offers - Ecommerce Admin</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <%- include("partials/sidebar.ejs") %>
+    <div class="main-content">
+      <div class="header">
+        <h1>Offers Details</h1>
+      </div>
+      <div class="content">
+        <form id="offerform">
+          <label for="catid">category name :</label>
+
+          <select name="catid" id="catid"></select>
+          <label for="fname">Discount</label>
+          <input
+            type="text"
+            id="offername"
+            name="offername"
+            placeholder="Enter in percentage.."
+          />
+
+          <label for="lname">start date</label>
+          <input
+            type="date"
+            id="startdate"
+            name="startdate"
+            placeholder="start date.."
+          />
+          <label for="lname">End date</label>
+          <input
+            type="date"
+            id="enddate"
+            name="enddate"
+            placeholder="End date.."
+          />
+
+          <input type="submit" value="Create offer" />
+        </form>
+      </div>
+      <div class="table">
+        <table id="customers">
+          <tr>
+            <th>Discount</th>
+            <th>category id</th>
+            <th>Start date</th>
+            <th>End date</th>
+            <th>is Expired</th>
+            <th>updated date</th>
+            <th>Created date</th>
+            <th>Edit</th>
+            <th>delete</th>
+          </tr>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+      <%- include("partials/footer.ejs") %>
+    </div>
+  </body>
+  <script src="/javascript/admin/admin.offers.js"></script>
+</html>

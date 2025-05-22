@@ -1,0 +1,101 @@
+<%- include('partials/header') %>
+
+<head>
+  <title>Shop product</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="/css/user/profile.css" />
+</head>
+
+<div class="main-div">
+  <div class="aside-div">
+    <div id="Dashboard" class="aside-component onthecomponent" onclick="checkDiv('dashboard',this)">
+      <p><i class="fa-solid fa-sliders"></i></p>
+      <p>Dashboard</p>
+    </div>
+    <div class="aside-component" onclick="checkDiv('order',this)">
+      <p><i class="fa-solid fa-bag-shopping"></i></p>
+      <p>Orders</p>
+    </div>
+    <div class="aside-component" onclick="checkDiv('profile',this)">
+      <p><i class="fa-regular fa-user"></i></p>
+      <p>Update Profile</p>
+    </div>
+    <div class="aside-component" onclick="checkDiv('address',this)">
+      <p><i class="fa-solid fa-location-dot"></i></p>
+      <p>My Address</p>
+    </div>
+    <div class="aside-component" onclick="checkDiv('password',this)">
+      <p><i class="fa-solid fa-sliders"></i></p>
+      <p>Change Password</p>
+    </div>
+    <div onclick="logout()" class="aside-component">
+      <p><i class="fa-solid fa-right-from-bracket"></i></p>
+      <p>Logout</p>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="div-header">
+      <p id="name">My Dashboard</p>
+      <button id="addAddressButton" class="btn" style="display: none" onclick="checkInnerDiv('addNewAddress')">
+        Add New Address
+      </button>
+    </div>
+    <div class="main-block">
+      <div id="dashboard"></div>
+      <div id="order" style="display: none"></div>
+      <div id="address" style="display: none"></div>
+      <div id="editAddressForm" style="display: none"></div>
+      <div id="addNewAddress" style="display: none">
+        <form id="addAddressForm" method="post">
+          <div class="container">
+            <h3>Add New Address</h3>
+          </div>
+          <div class="container">
+            <input type="text" name="address" placeholder="Address" />
+          </div>
+          <div class="container">
+            <input type="text" name="pin_code" placeholder="Pincode" />
+          </div>
+          <div class="container">
+            <input type="text" name="city" placeholder="City" />
+          </div>
+          <div class="container">
+            <input type="text" name="state" placeholder="state" />
+          </div>
+          <div class="container-center">
+            <input type="submit" value="Submit" id="addressSubmit" />
+          </div>
+        </form>
+      </div>
+
+      <div id="profile" style="display: none"></div>
+      <div id="password" style="display: none">
+        <form action="/" method="post" enctype="multipart/form-data" id="resetform">
+          <div class="container">
+            <h3>Change password</h3>
+          </div>
+          <div class="container">
+            <input type="password" name="previous_password" placeholder="Previous Password" />
+          </div>
+          <div class="container">
+            <input type="password" name="password" placeholder="password" />
+          </div>
+          <div class="container">
+            <input type="password" name="confirmPassword" placeholder="ConfirmPassword" />
+          </div>
+          <div class="container-center">
+            <button onclick="resetPassword(event)">Reset Password</button>
+          </div>
+        </form>
+      </div>
+      <div id="logout" style="display: none"></div>
+    </div>
+  </div>
+</div>
+<script src="/javascript/user/user.profile.js">
+  
+</script>
+
+<%- include('partials/footer') %>

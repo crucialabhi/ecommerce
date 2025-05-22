@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Products</title>
+    <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+    <link rel="stylesheet" href="/css/admin/admin.availableProduct.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src='https://cdn.plot.ly/plotly-3.0.1.min.js'></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/treemap.js"></script>
+
+</head>
+<body>
+  <%- include("partials/sidebar.ejs") %>
+
+    <div class="main-content">
+        <div class="header">
+            <h1>Available Products</h1>
+        </div>
+        <div class="content">
+            
+            <div>
+                <h2>Available Product</h2>
+
+                <canvas id="myPieChart"></canvas>
+            </div>
+
+<br><br>
+            <div>
+                <h2>Electronics Product Details..</h2>
+
+             <div id="myDivElectronics" style="max-width: 1000px;height: 500px;margin: 0px auto"></div>
+             <div id="details"></div>
+            </div>
+
+
+            <br><br>
+            <div>
+                <h2>Cloth's Product Details..</h2>
+                <div id="myDivClothes" style="max-width: 1000px;height: 500px;margin: 0px auto"></div>
+            </div>
+
+            <div >
+              <div class="searchdiv">
+                <div class="search" style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 20px;">
+                  <h2>All Product OverView..</h2>
+
+                  <div>
+                    
+                    <input type="text"  id="productinput" oninput="searchproduct()" placeholder="Search Product name..."  style="cursor: pointer;"/>
+                    <input type="submit" name="" id="searchResultData" value="search"  style="margin-left: 20px;">
+
+                 </div>
+        
+                </div>
+              </div>
+                <table id="allProduct">
+                    
+                </table>
+                <div id="paginationNumber"></div>
+            </div>
+            
+        </div>
+        <%- include("partials/footer.ejs") %>
+    </div>
+    
+    
+</body>
+    <script src="/javascript/admin/admin.availableProduct.js"></script>
+</html>

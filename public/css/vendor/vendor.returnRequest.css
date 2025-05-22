@@ -1,0 +1,116 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+.active {
+  /* border-bottom: 10px solid grey !important; */
+  border: 2px solid hsl(176, 88%, 27%);
+  color: white!important ;
+  background-color: hsl(176, 88%, 27%) !important;
+}
+body {
+  /* font-family: Arial; */
+  margin: 0%;
+  padding: 0%;
+  background-color: #f7f8fa;
+}
+#ReturnRequestDiv {
+  margin-left: 18%;
+}
+
+th {
+  background-color: hsl(176, 88%, 27%);
+  color: white;
+  font-size: larger;
+}
+
+td {
+  border: 2px solid #939599;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  border-collapse: collapse;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 10px 10px 5px rgba(165, 183, 189, 0.753);
+  margin-top: 3%;
+  margin-left: -35px;
+}
+.parentDiv {
+  padding: 1%;
+}
+#noReturnRequest {
+  margin-left: 10%;
+}
+#showReturnRequest {
+  margin-top: 2%;
+  margin-left: 20%;
+
+  border-color: hsl(176, 88%, 27%);
+  border-radius: 5px;
+  padding: 10px 10px;
+
+  cursor: pointer;
+  font-size: large;
+  color: hsl(176, 88%, 27%) ;
+  background-color: transparent ;
+  
+  border-radius: 5px;
+
+  font-weight: bold;
+ 
+
+}
+#showReturnRequestHistoy {
+  margin-left: 40%;
+
+  border-color: hsl(176, 88%, 27%);
+  border-radius: 5px;
+  padding: 10px 10px;
+  color: hsl(176, 88%, 27%) ;
+  background-color: transparent ;
+  cursor: pointer;
+  font-size: large;
+  border-radius: 5px;
+
+  font-weight: bold;
+}
+.AcceptBtn {
+  background-color: hsl(176, 88%, 27%);
+  border-color: hsl(176, 88%, 27%);
+  border-radius: 5px;
+  padding: 5px 5px;
+  color: white;
+  cursor: pointer;
+}
+.RejectBtn {
+  background-color: #d61818;
+  border-color: #d61818;
+  border-radius: 5px;
+  padding: 5px 5px;
+  color: white;
+  cursor: pointer;
+}
+.parentDiv #h1ID {
+  margin-left: 17%;
+}
+#noRequest {
+  margin-left: 30%;
+  font-size: larger;
+  font-weight: bold;
+}
+.paginationButtons {
+  margin-left: 50%;
+  margin-top: 2%;
+}
+.paginationButtons > button {
+  background-color: hsl(176, 88%, 27%);
+  padding: 1% 1.5%;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid hsl(176, 88%, 27%);
+}

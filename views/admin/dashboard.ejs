@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+    <title>Dashboard - E-commerce Admin</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/admin/admin.adminDashboard.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+  </head>
+  <body>
+    <aside class="sidebar">
+      
+      <img id="logo" src="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+      <ul id="search">
+        <li><a href="/admin/dashboard">Main Dashboard</a></li>
+        <li><a href="/admin/vendors">Vendor Details</a></li>
+        <li><a href="/admin/sales">Sales</a></li>
+        <li><a href="/admin/orders">Order Details</a></li>
+        <li><a href="/admin/pending-verification">Pending Verification</a></li>
+        <li><a href="/admin/offers">Offers</a></li>
+        <li><a href="/admin/users">Users</a></li>
+        <li><a href="/admin/available-products">Available Products</a></li>
+        <li><a href="/admin/contacttovendor">Contact To Vendor</a></li>
+        <li><a href="/admin/notifications">Notifications</a></li>
+        <li><a href="/admin/values">Manage Values</a></li>
+        <li><a href="/admin/shipment">Shipment details</a></li>
+        <li><a href="/admin/revenue">Admin Revenue</a></li>
+        <li><button class="logoutbtn" onclick="logout()">Logout</button></li>
+      </ul>
+    </aside>
+    <%- include("partials/sidebar.ejs") %>
+
+    <div class="main-content">
+      <!-- header -->
+      <div class="header">
+        <h1>Main Dashboard</h1>
+
+        <div class="search" style="display: flex;">
+
+          <div>
+            
+            <input type="text" name="" id="12345" placeholder="Search here..." onclick="searching()" style="cursor: pointer;"/>
+
+            <input type="submit" name="" id="searchResultData" value="search"  style="margin-left: 20px;">
+
+         </div>
+
+        </div>
+       
+        <div class="icon-profile">
+          <div>
+            <a href="/admin/notifications" style="text-decoration: none; "><i class="ri-notification-2-line" id="icon">
+              
+              <span id="countNotification" class="badge"></span></i></a>
+            
+          </div>
+
+          <div class="image1">
+            <img onclick="goToProfile()" style="object-fit: contain; cursor: pointer;"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRIl_pe9IzK6c7SdKf2TS5_q8P43--awu73445aH07eisBuwzwa9vRlZM&s" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <!-- body part 1-->
+        <div class="content1">
+          <div class="cardDetails" onclick="scrollToSectionEar()" style="cursor: pointer;">
+            <div >
+              <p>Earnings (Monthly)</p>
+              <h3 id="Totalearnings" style="color: #00aba9"></h3>
+            </div>
+
+            <div>
+              <i class="ri-funds-box-line"></i>
+            </div>
+          </div>
+
+          <div class="cardDetails" onclick="scrollToSectionUser()" style="cursor: pointer;">
+            <div>
+              <p>Total User's</p>
+              <h3 id="totalUsers" style="color: #00aba9"> </h3>
+            </div>
+
+            <div>
+              <i class="ri-group-line"></i>
+            </div>
+          </div>
+
+          <div class="cardDetails" onclick="scrollToSectionOrder()" style="cursor: pointer;">
+            <div>
+              <p>Total Order's</p>
+              <h3 id="totalOrders" style="color: #00aba9"></h3>
+            </div>
+
+            <div>
+              <i class="ri-briefcase-2-line" id="icon2"></i>
+            </div>
+          </div>
+
+          <div class="cardDetails" onclick="scrollToSectionSales()" style="cursor: pointer;">
+            <div>
+              <p>Total Sale's</p>
+              <h3 id="totalSales" style="color: #00aba9"></h3>
+            </div>
+
+            <div>
+              <i class="ri-home-smile-2-line"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- body part 2 -->
+        <div class="content2">
+          <div>
+            <div class="charts">
+              <div class="chart1">
+
+                <div id="totalsales">
+                  <h3>Total Sales.</h3> 
+
+                  <select name="months" id="months">
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="Auguest">Auguest</option>
+                    <option value="September">September</option>
+                    <option value="Octomber">Octomber</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                  </select>
+
+              </div>
+
+                <canvas id="myLineChart"></canvas>
+              </div>
+
+              <div class="chart2" id="chart2">
+                <h3>Order's Overview.</h3>
+
+                <canvas id="myPieChart"></canvas>
+              </div>
+            </div>
+
+            <div class="second">
+              <div class="chart3" id="chart3">
+                <h3>Sales Overview.</h3>
+
+                <canvas id="myBarChart"></canvas>
+              </div>
+
+              <div class="listing">
+                <h3>Listing Trending Product..</h3>
+
+                <div>
+                <table id="product_table">
+
+                </table>
+
+                <div id="paginationNumberForProduct">
+                  
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="third" id="third">
+            <div class="earnings">
+              <div>
+                <div class="data">
+                  <h3>Earnings</h3>
+                  <p>Total Profit</p>
+                  <h2 id="profit" style="color: #00aba9"></h2>
+                  <p>Total Expense</p>
+                  <h2 id="expense">$6078.76</h2>
+                </div>
+
+                <canvas id="dashboardChart"></canvas>
+              </div>
+            </div>
+
+            <div>
+              <div class="chart5">
+
+                <div>
+                  <h3>Vendors Overview.</h3>
+
+                  <canvas id="myBarChart2"></canvas>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="four" id="four">
+            <div>
+              <h3>User Details</h3>
+
+              <div>
+
+              <table id="user_table">
+
+
+             
+              </table>
+
+              <div id="paginationNumber">
+                
+              </div>
+            </div>
+            </div>
+
+            
+
+          </div>
+        </div>
+      </div>
+      <%- include("partials/footer.ejs") %>
+    </div>
+  </body>
+  <script src="/javascript/admin/admin.dashboard.js"></script>
+</html>

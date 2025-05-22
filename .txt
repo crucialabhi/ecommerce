@@ -1,0 +1,13 @@
+//first take the git pull
+git checkout master
+git pull
+
+
+//do changes and then push
+git checkout -b "your name"
+git add .
+git commit -m "reason for commit"
+git push origin "your name"
+
+
+Don't forget to add .js extension for the file importing new function anywhere

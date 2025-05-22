@@ -1,0 +1,113 @@
+<%- include('partials/header') %>
+
+<head>
+  <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+  <title>Checkout Page</title>
+  <link rel="stylesheet" href="/css/user/checkout.css" />
+
+
+</head>
+<main id="main_div">
+  <div class="container">
+    <h1>Checkout</h1>
+    <div id="cart" class="cart">
+      <div class="cart-row">
+        <div class="image">
+          <p>Image</p>
+        </div>
+        <div class="item-name">
+          <p>Name</p>
+        </div>
+        <div class="price">
+          <p>Price</p>
+        </div>
+        <div class="quantity">
+          <p>Quantity</p>
+        </div>
+        <div class="subtotal">
+          <p>Subtotal</p>
+        </div>
+        <div class="remove">
+          <p>Remove</p>
+        </div>
+      </div>
+      <hr />
+    </div>
+  </div>
+
+  <div id="quantityMsg" class="quantityMsg"></div>
+  <div class="section1">
+    <div class="order-total">
+      <h3>Order Summary</h3>
+      <table>
+        <tr>
+          <td>Cart Subtotal</td>
+          <td id="cart_subtotal">Rs 00</td>
+        </tr>
+        <tr>
+          <td>Shipping</td>
+          <td>Rs 50</td>
+        </tr>
+        <tr>
+          <td>Total</td>
+          <td class="total" id="total">Rs 00</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section2">
+
+      <div class="container-address">
+        <h1 id="selectAddress">Select Your Address</h1>
+        <div id="select-button">
+          <button id="Add-address-btn" onclick="addAddressFunction()">
+            Add New Address
+          </button>
+        </div>
+        <div class="grid-container-address">
+          <div class="grid-header" id="grid-header"></div>
+          <div class="grid-body" id="grid-body"></div>
+        </div>
+        <div id="addNewAdd"></div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container1">
+    <div class="payment-methods">
+      <h3 class="payment-methods-title">Payment Methods</h3>
+      <form class="payment-methods-form">
+        <label for="payment-method" class="payment-method-label">Select Payment Method:</label>
+        <select id="payment-method" name="payment-method" class="payment-method-select">
+          <option value="cash">Cash on Delivery</option>
+          <option value="card">Credit/Debit Card</option>
+          <option value="paypal">PayPal</option>
+        </select>
+
+        <div id="card-details" style="display: none">
+          <br />
+          <label for="card-number" class="card-number-label">Card Number:</label>
+          <input type="text" id="card-number" name="card-number" class="card-number-input" placeholder="Enter Card Number" />
+          <br /><br />
+          <label for="expiry-date" class="expiry-date-label">Expiry Date:</label>
+          <input type="date" id="expiry-date" name="expiry-date" class="expiry-date-input" placeholder="Enter Expiry Date" />
+          <br /><br />
+          <label for="cvv" class="cvv-label">CVV:</label>
+          <input type="password" id="cvv" name="cvv" class="cvv-input" placeholder="Enter CVV" />
+          <br /><br />
+        </div>
+
+        <button type="button" id="place-order-btn" class="place-order-btn buy-button">
+          Place Order
+        </button>
+        <!-- <button type="button" id="payment-order-btn" class="place-order-btn buy-button">
+          payment Order
+        </button> -->
+      </form>
+    </div>
+  </div>
+</main>
+<script src="/javascript/user/user.checkout.js">
+</script> 
+<%- include('partials/footer') %>

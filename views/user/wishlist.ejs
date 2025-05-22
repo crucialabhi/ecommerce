@@ -1,0 +1,44 @@
+<%- include('partials/header') %>
+
+<head>
+  <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+  <title>Wishlist</title>
+  <link rel="stylesheet" href="/css/user/wishlist.css" />
+
+  <!-- For alert message -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+</head>
+
+<main>
+  <div class="container">
+    <h1>Wishlist</h1>
+    <div id="cart" class="cart">
+      <div class="cart-row">
+        <div class="image">
+          <p>Image</p>
+        </div>
+        <div class="item-name">
+          <p>Name</p>
+        </div>
+        <div class="price">
+          <p>Price</p>
+        </div>
+        <div class="remove">
+          <p>Remove</p>
+        </div>
+        <div class="addToCart">
+          <p>Cart</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="/javascript/user/user.wishlist.js">
+</script>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,52 @@
+<%- include('partials/header') %>
+
+<head>
+  <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+  <title>Order summary</title>
+  <link rel="stylesheet" href="css/user/orderSummary.css">
+  <!-- For star rating -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+
+<main>
+  <div class="product_details" id="display_product"></div>
+
+  <div class="order_summary" id="order_summary">
+    <div class="cart_subtotal">
+      <h3>Cart Subtotal</h3>
+      <table>
+        <tr>
+          <td>Price</td>
+          <td id="product_price">&#8377;</td>
+        </tr>
+        <tr>
+          <td>Qty.</td>
+          <td id="quantity"></td>
+        </tr>
+        <tr>
+          <td>Subtotal</td>
+          <td id="cart_subtotal">&#8377;</td>
+        </tr>
+        <tr>
+          <td>Shipping cost</td>
+          <td class="shipping_cost">&#8377;50</td>
+        </tr>
+        <tr>
+          <td>Total</td>
+          <td id="total">&#8377;</td>
+        </tr>
+      </table>
+      <button type="button" id="checkoutbtn" class="buy-button">
+        Proceed to Checkout
+      </button>
+    </div>
+  </div>
+
+</main>
+
+<script src="/javascript/user/user.orderSummary.js">
+  
+</script>
+
+<%- include('partials/footer') %>

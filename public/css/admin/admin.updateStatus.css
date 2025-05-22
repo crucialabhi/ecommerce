@@ -1,0 +1,120 @@
+/* General styling for the main content */
+.main-content {
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Header styling */
+.header {
+    /* text-align: center; */
+    padding: 20px 0;
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #1e3c72;
+    margin: 0;
+}
+
+/* Content styling */
+.content {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styling */
+#orderupdateform {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-size: 1.1rem;
+    color: #555;
+    font-weight: bold;
+}
+
+input[name="id"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Select dropdown styling */
+select[name="status"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+select[name="status"]:hover,
+select[name="status"]:focus {
+    border-color: hsl(176, 88%, 27%);
+    outline: none;
+}
+
+/* Submit button styling */
+input[type="submit"] {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    background-color:hsl(176, 88%, 27%);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #ffffff;
+    color: hsl(176, 88%, 27%);
+    border:1px solid hsl(176, 88%, 27%);;
+}
+
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .main-content {
+        padding: 10px;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    input[name="id"],
+    select[name="status"],
+    input[type="submit"] {
+        max-width: 100%;
+    }
+}
+.active a{
+    background-color: rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+  }

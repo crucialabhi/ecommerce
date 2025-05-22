@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/admin/admin.tax.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link
+      rel="icon"
+      href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png"
+    />
+    <title>tax manage - Ecommerce Admin</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <%- include("partials/sidebar.ejs") %>
+
+    <div class="main-content">
+      <div class="header">
+        <h1>Tax Management</h1>
+      </div>
+      <div class="content">
+        <form id="taxform">
+          <label for="catid">category name :</label>
+
+          <select name="catid" id="catid"></select>
+          <label for="sgst">sgst</label>
+          <input
+            oninput="calculatetotaltax()"
+            type="text"
+            id="sgst"
+            name="sgst"
+            placeholder="End sgst.."
+          />
+          <label for="cgst">cgst</label>
+          <input
+            oninput="calculatetotaltax()"
+            type="text"
+            id="cgst"
+            name="cgst"
+            placeholder="End cgst.."
+          />
+          <label for="total">Total tax</label>
+          <input readonly id="total" name="total" />
+          <input type="submit" value="Generate tax" />
+        </form>
+      </div>
+      <div class="table">
+        <table id="customers">
+          <tr>
+            <th>tax id</th>
+            <th>Category id</th>
+            <th>SGST</th>
+            <th>CGST</th>
+            <th>Total</th>
+            <th>updated date</th>
+            <th>Created date</th>
+            <th>Edit</th>
+            <th>delete</th>
+          </tr>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+
+      <%- include("partials/footer.ejs") %>
+
+    </div>
+  </body>
+  <script src="/javascript/admin/admin.taxmanage.js"></script>
+</html>

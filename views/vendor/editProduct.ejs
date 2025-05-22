@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/vendor/vendor.editProduct.css" />
+  <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+    <title>Edit Product</title>
+  </head>
+  
+  <body>
+    <%- include("sidebar.ejs") %>
+    <main>
+      <div class="main-div">
+        <div class="registration-div">
+          <div class="container-div">
+            <h3>Edit Products Form</h3>
+          </div>
+          <form id="productFormId">
+            <div class="container">
+              <div class="productImgDiv">
+                <div class="productImgLeft">
+                  <label for="productImgId" class="productImgLabel"
+                    >Select Photos</label
+                  ><br />
+
+                  <input
+                    type="file"
+                    id="productImgId"
+                    name="productImgs"
+                    onchange="preview(this)"
+                    multiple
+                  />
+                </div>
+                <div class="productImgRight">
+                  <div class="previewArea" id="imagePreview"></div>
+                </div>
+              </div>
+            </div>
+            <div class="container-div">
+              <input
+                type="text"
+                name="title"
+                id="titleId"
+                placeholder="Title"
+              />
+            </div>
+            <div class="container-div">
+              <textarea
+                name="description"
+                id="descriptionId"
+                rows="4"
+                cols="50"
+                placeholder="Description"
+              ></textarea>
+            </div>
+            <div class="container-center">
+              <input
+                type="submit"
+                value="submit"
+                name=""
+                id=""
+                class="submitBtn"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+ 
+   <script src="/javascript/vendor/vendor.editProduct.js"></script>
+</html>

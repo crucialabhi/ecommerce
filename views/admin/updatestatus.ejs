@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+    <title>
+        order : <%= result[0].order_id %> - Ecommerce Admin
+    </title>
+    <link rel="stylesheet" href="/css/admin/admin.updateStatus.css" />
+    <link rel="stylesheet" href="/css/admin/admin.common.css">
+</head>
+
+<body>
+
+
+    <%- include("partials/sidebar.ejs") %>
+
+
+    <div class="main-content">
+        <div class="header">
+            <h1>Update Order Status</h1>
+
+        </div>
+        <div class="content">
+            <form id="orderupdateform">
+                <label for="fname"><%result[0].order_status%></label>
+                <input name="id" value="<%= result[0].order_id %>" readonly>
+                <% if (result[0].order_status=="pending" ) { %>
+                    <label for="cars">Choose status:</label>
+                    <select name="status" id="status">
+                        <option value="pending" selected>pending</option>
+                        <option value="processing">processing</option>
+                        <option value="shipping">shipping</option>
+                        <option value="complete">complete</option>
+                        <% } %>
+                            <% if (result[0].order_status=="processing" ) { %>
+                                <label for="cars">Choose status:</label>
+                                <select name="status" id="status">
+                                    <option value="processing">processing</option>
+                                    <option value="shipping">shipping</option>
+                                    <option value="complete">complete</option>
+                                    <% } %>
+                                        <% if (result[0].order_status=="shipping" ) { %>
+                                            <label for="cars">Choose status:</label>
+                                            <select name="status" id="status">
+                                                <option value="processing">shipping</option>
+                                                <option value="complete">complete</option>
+                                                <% } %>
+                                                <% if (result[0].order_status=="complete" ) { %>
+                                                    <label for="cars">Choose status:</label>
+                                                    <select name="status" id="status">
+                                                        <option value="complete">complete</option>
+                                                        <% } %>
+                                            </select>
+                                            <input class="button" type="submit" value="update status">
+            </form>
+        </div>
+    </div>
+
+
+</body>
+<script src="/javascript/admin/admin.updatestatus.js"></script>
+</html>

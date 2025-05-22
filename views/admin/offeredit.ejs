@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= result[0].offer_name %> - Ecommerce Admin</title>
+    <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+    <link rel="stylesheet" href="/css/admin/admin.offers.css" />
+    <link rel="stylesheet" href="/css/admin/admin.common.css">
+</head>
+<body>
+    <%- include("partials/sidebar.ejs") %>
+    <div class="main-content">
+        <div class="header">
+            <h1>Main Dashboard</h1>
+
+        </div>
+        <div class="content">
+            <form id="offerform">
+                <label for="fname">Offer Name</label>
+                <input name="id" value="<%= result[0].offer_id %>" hidden>
+                <input type="text" id="offername" name="offername" value="<%= result[0].offer_name %>" >
+                <label for="lname">start date</label>
+                <input type="date" id="startdate" name="startdate" value="<%= result[0].offer_start_date %>">
+                <label for="lname">End date</label>
+                <input type="date" id="enddate" name="enddate" value="<%= result[0].offer_end_date %>">
+                <input type="submit" value="update offer">
+            </form>
+        </div>
+    </div>
+</body>
+<script src="/javascript/admin/admin.offeredit.js"></script>
+</html>

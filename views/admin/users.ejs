@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+    <title>Users Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/admin/admin.users.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+<body>
+    <%- include("partials/sidebar.ejs") %>
+    <div class="main-content">
+
+        <div class="header">
+
+            <h1>User's Details</h1>
+
+            <div class="search">
+                <input type="text" oninput="searchuser()" id="query" placeholder="Search here...">
+                <input type="submit" name="" id="" value="search">
+            </div>
+
+            
+
+        </div>
+
+        <div>
+            <canvas id="myBarChart"></canvas>
+        </div>
+
+        <br>
+
+        
+        <h3>Users Details.</h3>
+
+        <br>
+
+        <div>
+
+            <table id="user_table">
+
+            </table>
+
+
+            <div id="paginationNumber">
+                <!-- Page Number of pagination -->
+            </div>
+
+
+        </div>
+
+
+        <%- include("partials/footer.ejs") %>
+    </div>
+</body>
+
+
+<script src="/javascript/admin/admin.users.js"></script>
+
+</html>

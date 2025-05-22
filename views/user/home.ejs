@@ -1,0 +1,50 @@
+<%- include('partials/header') %>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+  <title>Home page</title>
+  <link rel="stylesheet" href="/css/user/homePage.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+</head>
+
+<main>
+  <div class="introduction">
+    <div class="left">
+      <p id="p1">Hot Promotions</p>
+      <p id="p2">Trending Fashion</p>
+      <p id="p3">Great Collection</p>
+      <p id="p4">Save more with coupons & up to 20% off</p>
+      <button id="shop-now" aria-label="Shop Now">Shop Now</button>
+    </div>
+    <div class="right">
+      <img src="/images/user_homepage_image/home-img.png" alt="Fashion promotion" />
+    </div>
+  </div>
+
+  <p>Popular Categories</p>
+  <div class="categories" id="categories"></div>
+
+  <div class="shop-item" id="shop-item">
+    <div class="button-group" id="button-group">
+      <div id="featured">
+        <button aria-label="Featured Products">Featured</button>
+      </div>
+      <div id="popular">
+        <button aria-label="Popular Products">Popular</button>
+      </div>
+      <div id="new-added">
+        <button aria-label="New Added Products">New Added</button>
+      </div>
+    </div>
+    <div class="items" id="items"></div>
+  </div>
+</main>
+
+<script src="/javascript/user/user.home.js">
+  
+</script>
+</main>
+<%- include('partials/footer') %>

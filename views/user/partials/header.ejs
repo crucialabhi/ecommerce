@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/partials/header.css">
+  <script src="https://unpkg.com/@barba/core"></script>
+  <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+</head>
+
+<body data-barba="wrapper">
+  <header class="header">
+    <nav class="nav_container">
+      <a href="/" class="nav_logo">
+        <img src="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png" alt="website logo" />
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav_menu" id="nav_menu">
+        <a href="/" class="nav_link" id="home_nav_link">Home</a>
+        <a href="/shop" class="nav_link" id="shop_nav_link">Shop</a>
+        <a href="/user-profile-page" class="nav_link" id="profile_nav_link">My Account</a>
+        <div class="login_div" id="login_div">
+          <a href="/auth/login" class="nav_link" id="login_nav_link">Login</a>
+          <a href="/auth/signup" class="nav_link" id="signup_nav_link">Signup</a>
+        </div>
+      </div>
+      <div class="header_search" id="header_search">
+        <input type="text" placeholder="Search For Items..." class="form_input" id="search-items" />
+        <button class="search_btn">
+          <img src="images/search.svg" alt="search icon" />
+        </button>
+      </div>
+      <div class="header_user_actions">
+        <a href="/wishlist" class="header_action_btn" title="Wishlist">
+          <img src="/images/heart.svg" alt="Wishlist" />
+          <span class="count" id="wishlist_count">0</span>
+        </a>
+        <a href="/cart" class="header_action_btn" title="Cart">
+          <img src="/images/cart.svg" alt="Cart" />
+          <span class="count" id="cart_count">0</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <script>
+    async function checkUser() {
+      let login_div = document.getElementById("login_div");
+      let response = await fetch('/checkUserLogin', {
+        method: "post"
+      });
+
+      if (response.status == 200) {
+        login_div.innerHTML = `<button class="logoutbtn" onclick="logout()">Logout</button>`;
+      } else {
+        login_div.innerHTML = `
+          <a href="/auth/login" class="nav_link" id="login_nav_link">Login</a>
+          <a href="/auth/signup" class="nav_link" id="signup_nav_link">Signup</a>
+        `;
+      }
+    }
+    checkUser();
+
+    async function setCartCount() {
+      let response = await fetch('/fetchCartData');
+      let result = await response.json();
+      document.getElementById('cart_count').innerHTML = result.data.length || 0;
+    }
+    setCartCount();
+
+    async function setWishlistCount() {
+      let response = await fetch("/fetchWishlistData");
+      let result = await response.json();
+      document.getElementById('wishlist_count').innerHTML = result.data.length || 0;
+    }
+    setWishlistCount();
+
+    function logout() {
+      Swal.fire({
+        text: "Are you sure you want to log out?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Logout"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          document.cookie = 'userToken=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+          window.location.href = '/auth/login';
+        }
+      });
+    }
+
+    document.getElementById('hamburger').addEventListener('click', () => {
+      const navMenu = document.getElementById('nav_menu');
+      navMenu.classList.toggle('active');
+    });
+  </script>
+</body>
+
+</html>

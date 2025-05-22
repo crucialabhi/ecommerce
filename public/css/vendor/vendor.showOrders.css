@@ -1,0 +1,62 @@
+
+* {
+     margin: 0;
+     padding: 0;
+   }
+
+ body {
+   font-family: Arial;
+   margin: 0%;
+   padding: 0%;
+   background-color: #f7f8fa;
+ }
+ #orderDetailDiv {
+   margin-left: 13%;
+ }
+ table {
+   width: 100%;
+   border-radius: 10px;
+   /* background-color: #e9f6eb; */
+ }
+ .filter {
+   display: flex;
+ }
+ #filterPara {
+   margin-left: 20%;
+   margin-top: 0.5%;
+   font-size: larger;
+ }
+ #filterSelect {
+   margin-left: 1%;
+   background-color: #04AA6D;
+   color: #e9f6eb;
+   width: 8%;
+ border-radius: 2px;
+ /* margin-top: 1%; */
+ margin-bottom: 1%;
+ padding: 10px;
+
+ }
+
+ th {
+   background-color: #09a17a;
+     color: white;
+     font-size: larger;
+ }
+ 
+ td {
+   border: 2px solid #939599;
+     text-align: center;
+     padding: 5px;
+     border-radius: 5px;
+     border-collapse: collapse;
+ }
+ table {
+   border-collapse: collapse;
+   width: 100%;
+   box-shadow: 10px 10px 5px rgba(165, 183, 189, 0.753);
+margin-top: 3%;
+ }
+.parentDiv{
+padding: 1%;
+}

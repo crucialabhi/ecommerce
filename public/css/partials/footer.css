@@ -1,0 +1,168 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.footer {
+  padding: 0;
+  background-color: #e0f2f1;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  max-width: 100%;
+}
+
+
+.footer_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  justify-content: space-between;
+  background-color: #e0f2f1;
+}
+
+.footer_link_container {
+  flex: 1;
+  min-width: 200px;
+  
+}
+
+.footer_link_container img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.footer_link_container p {
+  /* margin: 0.5rem 0; */
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.footer_link_container ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.footer_link_container ul li {
+  margin-bottom: 0.75rem;
+}
+
+.footer_link_container ul li a,
+.social-icons a {
+  color: #4a4a4a;
+  text-decoration: none;
+  transition: color 0.3s;
+  outline: none;
+}
+
+.footer_link_container ul li a:hover,
+.footer_link_container ul li a:focus-visible,
+.social-icons a:hover,
+.social-icons a:focus-visible {
+  color: #000000;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+}
+
+.payment-icons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.payment-icons img {
+  width: 40px;
+  height: 24px;
+}
+
+.bottom-text {
+  text-align: center;
+  border-top: 1px solid #eaeaea;
+  padding: 1rem 0;
+  margin: 0 auto 0 auto;
+  background-color: #e0f2f1;
+  color: #4a4a4a;
+  font-size: 14px;
+  max-width: 1200px;
+}
+
+.bottom-text p {
+  margin: 0.25rem 0;
+}
+
+@media (max-width: 1024px) {
+  .footer_container {
+    gap: 1.5rem;
+  }
+
+  .footer_link_container {
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer_container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer_link_container {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .footer_link_container img {
+    margin: 0 auto 1rem;
+  }
+
+  .social-icons,
+  .payment-icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1.5rem 0;
+    font-size: 12px;
+  }
+
+  .footer_link_container p {
+    font-size: 14px;
+  }
+
+  .footer_link_container img {
+    width: 60px;
+  }
+
+  .social-icons img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .payment-icons img {
+    width: 32px;
+    height: 20px;
+  }
+
+  .bottom-text {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= result[0].offer_name %> - Ecommerce Admin</title>
+    <link rel="stylesheet" href="/css/admin/admin.managevalue.css" />
+    <link rel="stylesheet" href="/css/admin/admin.common.css">
+    <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+</head>
+<body>
+    
+
+    <%- include("partials/sidebar.ejs") %>
+
+    <div class="main-content">
+
+        <div>
+        <div class="header">
+            <h1>Edit Values</h1>
+
+        </div>
+        <div class="content">
+            <form id="valueform">
+                <input name="id" value="<%= result[0].id %>" hidden>
+                <label for="title">Enter key</label>
+                <input type="text" id="title" name="title" value="<%= result[0].title %>" >
+                <label for="value">Enter value</label>
+                <input type="text" id="value" name="value" value="<%= result[0].content %>">
+                <input type="submit" value="update value">
+            </form>
+        </div>
+     </div>
+     
+    </div>
+
+   
+</body>
+<script src="/javascript/admin/admin.fetchvalues.js"></script>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+    <title>Vendor Details - E-commerce Admin</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/css/admin/admin.vendor.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+</head>
+<body>
+  <%- include("partials/sidebar.ejs") %>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <button class="close" id="closebutton">&times;</button>
+          <p id="result"></p>
+        </div>
+      
+      </div>
+    <div class="main-content">
+        <div class="header">
+            <h1>Vendor Details</h1>
+
+            <div class="search" style="display: flex;">
+
+              <div>
+                
+                <input type="text" name="" id="12345" placeholder="Search here..."  style="cursor: pointer;"/>
+    
+                <input type="submit" name="" id="searchResultData" value="search"  style="margin-left: 20px;">
+    
+             </div>
+    
+            </div>
+
+        </div>
+        <div class="content">
+            <div class="barChart">
+                <canvas id="barChart"></canvas>
+                <P>Category wise sellers</P>
+            </div>
+            <div class="pieChart">
+                <canvas id="pieChart"></canvas>
+                <P>activity status</P>
+            </div>
+        </div>
+
+        <div class="vendor-table">
+            <table id="customers">
+                <tr>
+                    <th>first_name</th>
+                    <th>email</th>
+                    <th>company_name</th>
+                    <th>gst_number</th>
+                    <th>is_verified</th>
+                    <th>active_from</th>
+                    <th>is_active</th>
+                    <th>show details</th>
+                </tr>
+                <tbody id="tbody">
+                </tbody>
+            </table>
+        </div>
+        <%- include("partials/footer.ejs") %>
+    </div>
+    <script src="/javascript/admin/admin.vendor.js"></script>
+</body>
+</html>

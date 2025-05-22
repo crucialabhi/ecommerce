@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/admin/admin.shipment.css" />
+    <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+    <title>shipment - Ecommerce Admin</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+</head>
+
+<body>
+
+
+  <%- include("partials/sidebar.ejs") %>
+    <div class="main-content">
+        <div class="header">
+            <h1>Shipment details</h1>
+            
+            <input type="text" oninput="searchorder()" id="searching" placeholder="Enter order id">
+            <input type="submit" name="" id="searchResultData" value="search"  style="margin-left: 10px;">
+
+            <div class="table">
+              
+              <table id="customers">
+                  
+                </table>
+
+                <div id="paginationNumber">
+                  
+                </div>
+          </div>
+        </div>
+        
+        <%- include("partials/footer.ejs") %>
+      </div>
+</body>
+<script src="/javascript/admin/admin.shipment.js"></script>
+</html>

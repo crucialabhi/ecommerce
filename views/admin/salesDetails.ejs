@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+    <title>Sales - E-commerce Admin</title>
+    <link rel="stylesheet" href="/css/admin/admin.sales.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <button class="hamburger" onclick="toggleSidebar()">☰</button>
+    <%- include("partials/sidebar.ejs") %>
+
+    <div class="main-content">
+      <div class="header">
+        <h1>Sales Details</h1>
+      </div>
+      <div class="content">
+
+        <div style="display: flex; justify-content: space-between;">
+        <h2>Sales Overview</h2>
+
+        <select name="months" id="months">
+          <option value="January">January</option>
+          <option value="February">February</option>
+          <option value="March">March</option>
+          <option value="April">April</option>
+          <option value="May">May</option>
+          <option value="June">June</option>
+          <option value="July">July</option>
+          <option value="Auguest">Auguest</option>
+          <option value="September">September</option>
+          <option value="Octomber">Octomber</option>
+          <option value="November">November</option>
+          <option value="December">December</option>
+        </select>
+      </div>
+        <!-- month wise sales -->
+        <div>
+          <canvas id="myChart"></canvas>
+        </div>
+        <!-- product wise sales of electronoics-->
+        <div class="salescontainer">
+          <span class="piechart">
+            <canvas id="pieChart"></canvas>
+            <span id="span">sales of electronics product</span>
+          </span>
+          <!-- product wise sales of clothes -->
+          <span class="barchart">
+            <canvas id="barchart"></canvas>
+            <span id="span">sales of cloth's product</span>
+          </span>
+        </div>
+        <!-- catogory wise sales -->
+        <div class="salescontainer">
+          <span class="catwisesales">
+            <canvas id="catwisesales"></canvas>
+            <span id="span">sales of both catogories</span>
+          </span>
+        </div>
+      </div>
+      <%- include("partials/footer.ejs") %>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/javascript/admin/admin.salesdetails.js"></script>
+  </body>
+</html>

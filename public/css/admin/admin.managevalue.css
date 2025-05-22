@@ -1,0 +1,123 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+/* Style for the main content container */
+.main-content {
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+    min-height: 100vh;
+    
+}
+
+/* Header styling */
+.header {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  
+}
+
+.header h1 {
+    color: #333;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/* Content section styling */
+.content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styling */
+#valueform {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-size: 16px;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Input fields styling */
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: hsl(176, 88%, 27%);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Submit button styling */
+input[type="submit"] {
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color:  hsl(176, 88%, 27%);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 150px;
+    align-self: center;
+}
+
+input[type="submit"]:hover {
+    background-color: #ffffff;
+    color:  hsl(176, 88%, 27%);
+    border: 0.5px solid  hsl(176, 88%, 27%);;
+}
+
+/* Hidden input (just in case) */
+input[type="hidden"] {
+    display: none;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .main-content {
+        padding: 10px;
+    }
+
+    .header {
+        padding: 15px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+    }
+}
+.active a{
+    background-color: rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+  }

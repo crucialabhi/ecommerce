@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/vendor/vendor.login.css" />
+    <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/vendor/login.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+  </head>
+  
+  <body>
+    <div class="registration-div">
+      <div class="container">
+        <h3>Login</h3>
+      </div>
+        <form
+      action="/vendor/pending-verification"
+      method="post"
+      enctype="multipart/form-data"
+      id="form"
+    >
+      <div class="container">
+        <input type="text" name="email"  placeholder="Email"/>
+      </div>
+      <div class="container">
+        <input type="password" name="password" placeholder="Password"/>
+      </div>
+      <div class="container-center">
+        <input type="submit" value="submit" id="submitBtn">
+        <input type="submit" value="Create Account" id="submitBtnSignup">
+      </div>
+      <div class="container-center">
+        <a href="/auth/forget-password-page-vendor">Forget Password</a>
+      </div>
+    </form>
+    </div>
+</div>
+    
+  </body>
+  <script src="/javascript/vendor/vendor.login.js"></script>
+</html>

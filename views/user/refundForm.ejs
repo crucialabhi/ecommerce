@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="https://res.cloudinary.com/dozcrwtud/image/upload/v1745488770/mqparkqakhg9nwtg2nfm.png">
+  <title>Order Details</title>
+  <link rel="stylesheet" href="/css/user/refundForm.css">
+</head>
+<body onload="fetchDetails()">
+  <div class="order-container">
+    <center><h2>Refund Request Form</h2></center>
+
+    <div class="info" id="productName"><span class="label">Product Name : </span> </div>
+    <div class="info" id="productPrice"><span class="label">Product Price : </span></div>
+    <div class="info" id="deliveryDate"><span class="label">Delivered on : </span></div>
+    <div class="info" id="refundReason"><span class="label">Refund Reason : <select name="reasons" id="reasons" onchange="checkValue(this)">
+                                                                              <option value="" selected>Please select a reason</option>
+                                                                              <option value="Received a damaged or defective product">Received a damaged or defective product</option>
+                                                                              <option value="Wrong item delivered">Wrong item delivered</option>
+                                                                              <option value="Product not as described online">Product not as described online</option>
+                                                                              <option value="Changed mind or no londer needed the product">Changed mind or no londer needed the product</option>
+                                                                              <option value="other">Other</option>
+                                                                              
+                                                                            </select>
+    <textarea placeholder="Reason not in the list ? Let us know here..."  id="userReason" name="userReason" rows="4" cols="50" style="display: none;"></textarea> 
+    
+  </span></div>
+
+    <div class="button-container">
+      <button class="back-btn" onclick="history.back()">Back</button>
+      <button class="submit-btn" id="submit-btn" >Submit</button>
+    </div>
+  </div>
+
+  <script src="/javascript/user/user.refundForm.js">
+    
+  </script>
+
+
+</body>
+</html>
